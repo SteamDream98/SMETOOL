@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Debt Brake Calculator') }} - {{ _('SME Debt Tool') }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-primary">
+                <i class="fas fa-shield-alt me-2"></i>{{ _('Debt Brake Calculator') }}
+            </h1>
+            <p class="lead text-muted">{{ _('Calculate borrowing limits based on Germany\'s debt brake mechanism') }}</p>
+        </div>
+
+        <!-- Calculator Form -->
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-calculator me-2"></i>{{ _('Debt Brake Calculation') }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <form id="debtBrakeForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="revenue" class="form-label">
+                                    <i class="fas fa-euro-sign me-1"></i>{{ _('Annual Revenue (€)') }}
+                                </label>
+                                <input type="number" class="form-control" id="revenue" name="revenue" 
+                                       placeholder="{{ _('Enter annual revenue') }}" required>
+                                <div class="form-text">{{ _('Your company\'s total annual revenue') }}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="currentDebt" class="form-label">
+                                    <i class="fas fa-chart-line me-1"></i>{{ _('Current Debt (€)') }}
+                                </label>
+                                <input type="number" class="form-control" id="currentDebt" name="currentDebt" 
+                                       placeholder="{{ _('Enter current debt') }}" value="0">
+                                <div class="form-text">{{ _('Your current outstanding debt') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calculator me-2"></i>{{ _('Calculate Debt Limit') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="card shadow mt-4" style="display: none;">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-pie me-2"></i>{{ _('Calculation Results') }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="alert alert-info">
+                            <h6><i class="fas fa-info-circle me-1"></i>{{ _('Debt Brake Limit') }}</h6>
+                            <h4 class="text-primary" id="debtLimit">€0</h4>
+                            <small>{{ _('0.35% of annual revenue') }}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="alert alert-warning">
+                            <h6><i class="fas fa-exclamation-triangle me-1"></i>{{ _('Available Capacity') }}</h6>
+                            <h4 class="text-warning" id="availableCapacity">€0</h4>
+                            <small>{{ _('Remaining borrowing capacity') }}</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="progress" style="height: 30px;">
+                            <div class="progress-bar" id="debtProgress" role="progressbar" style="width: 0%">
+                                <span id="debtPercentage">0%</span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <small class="text-muted">{{ _('Current Debt Usage') }}</small>
+                            <small class="text-muted" id="debtStatus">{{ _('Within Limits') }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Panel -->
+        <div class="card shadow mt-4">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>{{ _('About Germany\'s Debt Brake') }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-shield-alt text-primary me-1"></i>{{ _('What is the Debt Brake?') }}</h6>
+                        <p class="small">{{ _('Germany\'s debt brake (Schuldenbremse) limits government borrowing to 0.35% of GDP. For SMEs, this principle can be applied as a conservative borrowing guideline.') }}</p>
+                        
+                        <h6><i class="fas fa-calculator text-success me-1"></i>{{ _('How it Works') }}</h6>
+                        <p class="small">{{ _('The calculator uses 0.35% of your annual revenue as a conservative debt limit, helping you maintain financial stability.') }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-lightbulb text-warning me-1"></i>{{ _('Benefits') }}</h6>
+                        <ul class="small">
+                            <li>{{ _('Maintains financial discipline') }}</li>
+                            <li>{{ _('Reduces default risk') }}</li>
+                            <li>{{ _('Improves creditworthiness') }}</li>
+                            <li>{{ _('Ensures sustainable growth') }}</li>
+                        </ul>
+                        
+                        <h6><i class="fas fa-exclamation-triangle text-danger me-1"></i>{{ _('Important Note') }}</h6>
+                        <p class="small">{{ _('This is a guideline tool. Consult with financial professionals for specific advice tailored to your situation.') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('debtBrakeForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const data = {
+            revenue: parseFloat(formData.get('revenue')),
+            currentDebt: parseFloat(formData.get('currentDebt')) || 0
+        };
+        
+        try {
+            const response = await fetch('/api/debt-brake', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            displayResults(result, data.currentDebt);
+        } catch (error) {
+            console.error('Error:', error);
+            alert('{{ _("An error occurred. Please try again.") }}');
+        }
+    });
+    
+    function displayResults(result, currentDebt) {
+        const debtLimit = result.debt_limit;
+        const availableCapacity = Math.max(0, debtLimit - currentDebt);
+        const debtPercentage = currentDebt > 0 ? (currentDebt / debtLimit) * 100 : 0;
+        
+        document.getElementById('debtLimit').textContent = '€' + debtLimit.toLocaleString();
+        document.getElementById('availableCapacity').textContent = '€' + availableCapacity.toLocaleString();
+        document.getElementById('debtPercentage').textContent = debtPercentage.toFixed(1) + '%';
+        
+        const progressBar = document.getElementById('debtProgress');
+        progressBar.style.width = debtPercentage + '%';
+        
+        if (debtPercentage > 100) {
+            progressBar.className = 'progress-bar bg-danger';
+            document.getElementById('debtStatus').textContent = '{{ _("Over Limit") }}';
+        } else if (debtPercentage > 80) {
+            progressBar.className = 'progress-bar bg-warning';
+            document.getElementById('debtStatus').textContent = '{{ _("Near Limit") }}';
+        } else {
+            progressBar.className = 'progress-bar bg-success';
+            document.getElementById('debtStatus').textContent = '{{ _("Within Limits") }}';
+        }
+        
+        document.getElementById('results').style.display = 'block';
+    }
+</script>
+{% endblock %}

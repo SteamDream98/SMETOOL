@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive debt management solutions for German SMEs. Calculate debt limits, analyze costs, prioritize repayments, and find funding opportunities.">
+    <meta name="keywords" content="SME debt management, German debt brake, cost analysis, debt snowball, funding guidance, covenant tracking, small business finance">
+    <meta name="author" content="SME Debt Management Tool">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SME Debt Management Tool - Germany">
+    <meta property="og:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/">
+    <meta property="og:image" content="/static/og-image.png">
+    <meta property="og:site_name" content="SME Debt Management Tool">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SME Debt Management Tool - Germany">
+    <meta name="twitter:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta name="twitter:image" content="/static/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SME Debt Tool">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
+    <link href="/static/css/style.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SME Debt Management Tool",
+        "description": "Comprehensive debt management solutions for German SMEs",
+        "url": "http://localhost/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "SME Debt Management Tool"
+        }
+    }
+    </script>
+    
+    <title>Debt-Equity Swap - SME Debt Tool</title>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/" aria-label="SME Debt Management Tool Home">
+                <i class="fas fa-chart-line me-2" aria-hidden="true"></i>SME Debt Tool
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-brake">
+                            <i class="fas fa-shield-alt me-1" aria-hidden="true"></i>Debt Brake
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/cost-analysis">
+                            <i class="fas fa-calculator me-1" aria-hidden="true"></i>Cost Analysis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-equity">
+                            <i class="fas fa-exchange-alt me-1" aria-hidden="true"></i>Debt-Equity Swap
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-snowball">
+                            <i class="fas fa-snowflake me-1" aria-hidden="true"></i>Debt Snowball
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/funding-guidance">
+                            <i class="fas fa-euro-sign me-1" aria-hidden="true"></i>Funding
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/covenant-tracking">
+                            <i class="fas fa-clipboard-check me-1" aria-hidden="true"></i>Covenants
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i>Language
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/set_language/en">English</a></li>
+                            <li><a class="dropdown-item" href="/set_language/de">Deutsch</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about">
+                            <i class="fas fa-info-circle me-1" aria-hidden="true"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/donation">
+                            <i class="fas fa-heart me-1" aria-hidden="true"></i>Support
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="container my-5">
+        
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-primary">
+                <i class="fas fa-exchange-alt me-2"></i>Debt-Equity Swap Simulation
+            </h1>
+            <p class="lead text-muted">Simulate converting debt to equity to improve financial ratios</p>
+        </div>
+
+        <!-- Calculator Form -->
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-calculator me-2"></i>Debt-Equity Swap Calculator
+                </h5>
+            </div>
+            <div class="card-body">
+                <form id="debtEquityForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="currentDebt" class="form-label">
+                                    <i class="fas fa-euro-sign me-1"></i>Current Debt (€)
+                                </label>
+                                <input type="number" class="form-control" id="currentDebt" name="currentDebt" 
+                                       placeholder="Enter current debt" required>
+                                <div class="form-text">Total outstanding debt</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="currentEquity" class="form-label">
+                                    <i class="fas fa-chart-pie me-1"></i>Current Equity (€)
+                                </label>
+                                <input type="number" class="form-control" id="currentEquity" name="currentEquity" 
+                                       placeholder="Enter current equity" required>
+                                <div class="form-text">Total shareholder equity</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="swapAmount" class="form-label">
+                                    <i class="fas fa-exchange-alt me-1"></i>Swap Amount (€)
+                                </label>
+                                <input type="number" class="form-control" id="swapAmount" name="swapAmount" 
+                                       placeholder="Enter swap amount" required>
+                                <div class="form-text">Amount of debt to convert to equity</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="equityPrice" class="form-label">
+                                    <i class="fas fa-tag me-1"></i>Equity Price per Share (€)
+                                </label>
+                                <input type="number" step="0.01" class="form-control" id="equityPrice" name="equityPrice" 
+                                       placeholder="Enter equity price" required>
+                                <div class="form-text">Price per share for equity conversion</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calculator me-2"></i>Simulate Swap
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="card shadow mt-4" style="display: none;">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-pie me-2"></i>Swap Simulation Results
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="alert alert-info">
+                            <h6><i class="fas fa-chart-line me-1"></i>New Debt-to-Equity Ratio</h6>
+                            <h4 class="text-primary" id="newRatio">0.00</h4>
+                            <small>After swap completion</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="alert alert-warning">
+                            <h6><i class="fas fa-chart-pie me-1"></i>Shares to Issue</h6>
+                            <h4 class="text-warning" id="sharesToIssue">0</h4>
+                            <small>Number of shares to issue</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="alert alert-success">
+                            <h6><i class="fas fa-arrow-down me-1"></i>Debt Reduction</h6>
+                            <h4 class="text-success" id="debtReduction">€0</h4>
+                            <small>Amount of debt eliminated</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="alert alert-info">
+                            <h6><i class="fas fa-arrow-up me-1"></i>Equity Increase</h6>
+                            <h4 class="text-info" id="equityIncrease">€0</h4>
+                            <small>Amount of equity added</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Panel -->
+        <div class="card shadow mt-4">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>About Debt-Equity Swaps
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-exchange-alt text-primary me-1"></i>What is a Debt-Equity Swap?</h6>
+                        <p class="small">A debt-equity swap is a financial transaction where a company converts its debt obligations into equity ownership.</p>
+                        
+                        <h6><i class="fas fa-chart-line text-success me-1"></i>Benefits</h6>
+                        <ul class="small">
+                            <li>Improves debt-to-equity ratio</li>
+                            <li>Reduces interest payments</li>
+                            <li>Enhances financial flexibility</li>
+                            <li>May improve credit rating</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-exclamation-triangle text-warning me-1"></i>Considerations</h6>
+                        <ul class="small">
+                            <li>Dilutes existing shareholders</li>
+                            <li>Changes ownership structure</li>
+                            <li>May affect voting rights</li>
+                            <li>Requires regulatory approval</li>
+                        </ul>
+                        
+                        <h6><i class="fas fa-lightbulb text-info me-1"></i>Important Note</h6>
+                        <p class="small">This simulation is for educational purposes. Consult with financial professionals for specific advice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('debtEquityForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const data = {
+            currentDebt: parseFloat(formData.get('currentDebt')),
+            currentEquity: parseFloat(formData.get('currentEquity')),
+            swapAmount: parseFloat(formData.get('swapAmount')),
+            equityPrice: parseFloat(formData.get('equityPrice'))
+        };
+        
+        try {
+            const response = await fetch('/api/debt-equity', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            displayResults(result, data);
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        }
+    });
+    
+    function displayResults(result, data) {
+        document.getElementById('newRatio').textContent = result.new_debt_equity_ratio.toFixed(2);
+        document.getElementById('sharesToIssue').textContent = result.shares_to_issue.toLocaleString();
+        document.getElementById('debtReduction').textContent = '€' + data.swapAmount.toLocaleString();
+        document.getElementById('equityIncrease').textContent = '€' + data.swapAmount.toLocaleString();
+        
+        document.getElementById('results').style.display = 'block';
+    }
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6>SME Debt Management Tool</h6>
+                    <p class="small">Comprehensive debt management solutions for German SMEs</p>
+                    <p class="small">
+                        <a href="/about" class="text-light text-decoration-none">About</a> |
+                        <a href="#" class="text-light text-decoration-none">Privacy Policy</a> |
+                        <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="small mb-0">
+                        <i class="fas fa-exclamation-triangle me-1" aria-hidden="true"></i>
+                        This tool is for educational purposes only. Consult financial professionals for advice.
+                    </p>
+                    <p class="small mt-2">
+                        <i class="fas fa-code me-1" aria-hidden="true"></i>
+                        Built with Flask &amp; Bootstrap
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/static/js/main.js"></script>
+    
+    <!-- Analytics (replace with your tracking code) -->
+    
+</body>
+</html>

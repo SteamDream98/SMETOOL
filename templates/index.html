@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('SME Debt Management Tool - Germany') }}{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bold text-primary">{{ _('SME Debt Management Tool') }}</h1>
+                    <p class="lead text-muted">{{ _('Comprehensive debt management solutions for German SMEs') }}</p>
+                </div>
+
+                <!-- Feature Cards -->
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-shield-alt fa-2x"></i>
+                                </div>
+                                <h5 class="card-title">Debt Brake Calculator</h5>
+                                <p class="card-text">Calculate borrowing limits based on Germany's debt brake mechanism (0.35% of revenue).</p>
+                                <a href="{{ url_for('debt_brake') }}" class="btn btn-primary">Calculate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="feature-icon bg-success text-white rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-calculator fa-2x"></i>
+                                </div>
+                                <h5 class="card-title">Cost Analysis</h5>
+                                <p class="card-text">Analyze pre-tax and after-tax cost of debt with detailed breakdowns.</p>
+                                <a href="{{ url_for('cost_analysis') }}" class="btn btn-success">Analyze</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="feature-icon bg-warning text-white rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-exchange-alt fa-2x"></i>
+                                </div>
+                                <h5 class="card-title">Debt-Equity Swap</h5>
+                                <p class="card-text">Simulate partnerships and equity conversions to optimize capital structure.</p>
+                                <a href="{{ url_for('debt_equity') }}" class="btn btn-warning">Simulate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="feature-icon bg-info text-white rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-snowflake fa-2x"></i>
+                                </div>
+                                <h5 class="card-title">Debt Snowball</h5>
+                                <p class="card-text">Prioritize debt repayment by interest rate for maximum efficiency.</p>
+                                <a href="{{ url_for('debt_snowball') }}" class="btn btn-info">Prioritize</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="feature-icon bg-danger text-white rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-euro-sign fa-2x"></i>
+                                </div>
+                                <h5 class="card-title">Funding Guidance</h5>
+                                <p class="card-text">Get tailored advice on EU and Federal funding programs.</p>
+                                <a href="{{ url_for('funding_guidance') }}" class="btn btn-danger">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="feature-icon bg-secondary text-white rounded-circle mx-auto mb-3">
+                                    <i class="fas fa-clipboard-check fa-2x"></i>
+                                </div>
+                                <h5 class="card-title">Covenant Tracking</h5>
+                                <p class="card-text">Monitor financial ratios for compliance with loan agreements.</p>
+                                <a href="{{ url_for('covenant_tracking') }}" class="btn btn-secondary">Track</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Why Use This Tool?</h5>
+                                <div class="row text-center">
+                                    <div class="col-md-4">
+                                        <i class="fas fa-check-circle text-success fa-2x mb-2"></i>
+                                        <h6>Compliance</h6>
+                                        <p class="small text-muted">Stay compliant with German debt regulations</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <i class="fas fa-chart-line text-primary fa-2x mb-2"></i>
+                                        <h6>Optimization</h6>
+                                        <p class="small text-muted">Optimize your debt structure and costs</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <i class="fas fa-lightbulb text-warning fa-2x mb-2"></i>
+                                        <h6>Guidance</h6>
+                                        <p class="small text-muted">Get expert guidance on funding options</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{
+  "name": "sme-debt-management-tool",
+  "version": "1.0.0",
+  "description": "Comprehensive debt management solutions for German SMEs",
+  "main": "app.py",
+  "scripts": {
+    "build": "python build_static.py",
+    "start": "python app.py",
+    "dev": "python app.py"
+  },
+  "keywords": [
+    "debt-management",
+    "sme",
+    "germany",
+    "financial-tools",
+    "debt-brake",
+    "cost-analysis"
+  ],
+  "author": "SME Debt Management Tool",
+  "license": "MIT",
+  "engines": {
+    "python": ">=3.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/sme-debt-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/sme-debt-tool/issues"
+  },
+  "homepage": "https://yourusername.github.io/sme-debt-tool"
+}

@@ -1,0 +1,286 @@
+SME Debt Tool|SME-Schulden-Tool
+Debt Brake|Schuldenbremse
+Cost Analysis|Kostenanalyse
+Debt-Equity Swap|Schulden-Eigenkapital-Tausch
+Debt Snowball|Schulden-Schneeball
+Funding|Finanzierung
+Covenants|Covenants
+Language|Sprache
+About|Über
+SME Debt Management Tool|SME-Schuldenmanagement-Tool
+Comprehensive debt management solutions for German SMEs|Umfassende Schuldenmanagement-Lösungen für deutsche KMU
+Calculate|Berechnen
+Analyze|Analysieren
+Simulate|Simulieren
+Prioritize|Priorisieren
+Explore|Erkunden
+Track|Verfolgen
+Debt Brake Calculator|Schuldenbremse-Rechner
+Calculate borrowing limits based on Germany's debt brake mechanism|Berechnen Sie Kreditlimits basierend auf Deutschlands Schuldenbremse-Mechanismus
+Annual Revenue (€)|Jahresumsatz (€)
+Enter annual revenue|Jahresumsatz eingeben
+Your company's total annual revenue|Der Gesamtjahresumsatz Ihres Unternehmens
+Current Debt (€)|Aktuelle Schulden (€)
+Enter current debt|Aktuelle Schulden eingeben
+Your current outstanding debt|Ihre aktuellen ausstehenden Schulden
+Calculate Debt Limit|Schuldenlimit berechnen
+Debt Brake Calculation|Schuldenbremse-Berechnung
+Debt Brake Limit|Schuldenbremse-Limit
+0.35% of annual revenue|0,35% des Jahresumsatzes
+Available Capacity|Verfügbare Kapazität
+Remaining borrowing capacity|Verbleibende Kreditkapazität
+Current Debt Usage|Aktuelle Schuldennutzung
+Within Limits|Innerhalb der Grenzen
+Near Limit|Nahe dem Limit
+Over Limit|Über dem Limit
+Cost of Debt Analysis|Schuldenkosten-Analyse
+Analyze pre-tax and after-tax cost of debt with detailed breakdowns|Analysieren Sie Vor- und Nachsteuer-Schuldenkosten mit detaillierten Aufschlüsselungen
+Loan Principal (€)|Darlehenssumme (€)
+Enter loan amount|Darlehenssumme eingeben
+Total amount borrowed|Gesamtbetrag des Darlehens
+Interest Rate (%)|Zinssatz (%)
+Enter interest rate|Zinssatz eingeben
+Annual interest rate|Jährlicher Zinssatz
+Loan Term (Years)|Darlehenslaufzeit (Jahre)
+Enter loan term|Darlehenslaufzeit eingeben
+Length of loan in years|Länge des Darlehens in Jahren
+Tax Rate (%)|Steuersatz (%)
+Enter tax rate|Steuersatz eingeben
+Corporate tax rate (default: 30%)|Körperschaftsteuersatz (Standard: 30%)
+Calculate Cost Analysis|Kostenanalyse berechnen
+Monthly Payment|Monatliche Zahlung
+Fixed monthly payment|Feste monatliche Zahlung
+Total Payment|Gesamtzahlung
+Total amount to be paid|Gesamtbetrag zu zahlen
+Total Interest (Pre-tax)|Gesamtzinsen (Vor Steuern)
+Interest before tax benefits|Zinsen vor Steuervorteilen
+After-tax Interest|Nachsteuer-Zinsen
+Interest after tax benefits|Zinsen nach Steuervorteilen
+Effective Interest Rate|Effektiver Zinssatz
+After-tax effective interest rate|Nachsteuer-effektiver Zinssatz
+This tool is for educational purposes only. Consult financial professionals for advice.|Dieses Tool dient nur zu Bildungszwecken. Konsultieren Sie Finanzexperten für Beratung.
+Built with Flask & Bootstrap|Erstellt mit Flask & Bootstrap
+Privacy Policy|Datenschutzrichtlinie
+Terms of Service|Nutzungsbedingungen
+An error occurred. Please try again.|Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.
+Please fill in all required fields.|Bitte füllen Sie alle erforderlichen Felder aus.
+Invalid input. Please check your values.|Ungültige Eingabe. Bitte überprüfen Sie Ihre Werte.
+Calculation Results|Berechnungsergebnisse
+About Germany's Debt Brake|Über Deutschlands Schuldenbremse
+What is the Debt Brake?|Was ist die Schuldenbremse?
+Germany's debt brake (Schuldenbremse) limits government borrowing to 0.35% of GDP. For SMEs, this principle can be applied as a conservative borrowing guideline.|Deutschlands Schuldenbremse begrenzt die Staatsverschuldung auf 0,35% des BIP. Für KMU kann dieses Prinzip als konservative Kreditrichtlinie angewendet werden.
+How it Works|Wie es funktioniert
+The calculator uses 0.35% of your annual revenue as a conservative debt limit, helping you maintain financial stability.|Der Rechner verwendet 0,35% Ihres Jahresumsatzes als konservative Schuldengrenze und hilft Ihnen, die finanzielle Stabilität zu erhalten.
+Benefits|Vorteile
+Maintains financial discipline|Erhält finanzielle Disziplin
+Reduces default risk|Reduziert Ausfallrisiko
+Improves creditworthiness|Verbessert Kreditwürdigkeit
+Ensures sustainable growth|Sichert nachhaltiges Wachstum
+Important Note|Wichtiger Hinweis
+This is a guideline tool. Consult with financial professionals for specific advice tailored to your situation.|Dies ist ein Richtlinien-Tool. Konsultieren Sie Finanzexperten für spezifische Beratung, die auf Ihre Situation zugeschnitten ist.
+Cost Analysis Calculator|Kostenanalyse-Rechner
+Cost Analysis Results|Kostenanalyse-Ergebnisse
+Cost of Debt Analysis|Schuldenkosten-Analyse
+What is Cost of Debt?|Was sind Schuldenkosten?
+The cost of debt is the effective rate that a company pays on its borrowed funds. It includes both the interest rate and tax benefits.|Die Schuldenkosten sind der effektive Zinssatz, den ein Unternehmen für seine geliehenen Mittel zahlt. Es umfasst sowohl den Zinssatz als auch Steuervorteile.
+Pre-tax vs After-tax|Vor Steuern vs. Nach Steuern
+Pre-tax cost shows the raw interest expense, while after-tax cost accounts for tax deductibility of interest payments.|Die Vorsteuer-Kosten zeigen die reinen Zinsaufwendungen, während die Nachsteuer-Kosten die Steuerabzugsfähigkeit von Zinszahlungen berücksichtigen.
+Why It Matters|Warum es wichtig ist
+Helps in capital structure decisions|Hilft bei Kapitalstruktur-Entscheidungen
+Compares different financing options|Vergleicht verschiedene Finanzierungsoptionen
+Evaluates tax benefits of debt|Bewertet Steuervorteile von Schulden
+Supports investment decisions|Unterstützt Investitionsentscheidungen
+Debt-Equity Swap Simulation|Schulden-Eigenkapital-Tausch-Simulation
+Simulate converting debt to equity to improve financial ratios|Simulieren Sie die Umwandlung von Schulden in Eigenkapital zur Verbesserung der Finanzkennzahlen
+Debt-Equity Swap Calculator|Schulden-Eigenkapital-Tausch-Rechner
+Current Equity (€)|Aktuelles Eigenkapital (€)
+Enter current equity|Aktuelles Eigenkapital eingeben
+Total shareholder equity|Gesamtes Eigenkapital der Aktionäre
+Swap Amount (€)|Tauschbetrag (€)
+Enter swap amount|Tauschbetrag eingeben
+Amount of debt to convert to equity|Betrag der Schulden, der in Eigenkapital umgewandelt werden soll
+Equity Price per Share (€)|Eigenkapitalpreis pro Aktie (€)
+Enter equity price|Eigenkapitalpreis eingeben
+Price per share for equity conversion|Preis pro Aktie für Eigenkapitalumwandlung
+Simulate Swap|Tausch simulieren
+Swap Simulation Results|Tausch-Simulationsergebnisse
+New Debt-to-Equity Ratio|Neues Schulden-Eigenkapital-Verhältnis
+After swap completion|Nach Abschluss des Tauschs
+Shares to Issue|Auszugebende Aktien
+Number of shares to issue|Anzahl der auszugebenden Aktien
+Debt Reduction|Schuldenreduzierung
+Amount of debt eliminated|Betrag der eliminierten Schulden
+Equity Increase|Eigenkapitalerhöhung
+Amount of equity added|Betrag des hinzugefügten Eigenkapitals
+About Debt-Equity Swaps|Über Schulden-Eigenkapital-Tausch
+What is a Debt-Equity Swap?|Was ist ein Schulden-Eigenkapital-Tausch?
+A debt-equity swap is a financial transaction where a company converts its debt obligations into equity ownership.|Ein Schulden-Eigenkapital-Tausch ist eine Finanztransaktion, bei der ein Unternehmen seine Schuldenverpflichtungen in Eigenkapitalbesitz umwandelt.
+Benefits|Vorteile
+Improves debt-to-equity ratio|Verbessert das Schulden-Eigenkapital-Verhältnis
+Reduces interest payments|Reduziert Zinszahlungen
+Enhances financial flexibility|Verbessert die finanzielle Flexibilität
+May improve credit rating|Kann das Kreditrating verbessern
+Considerations|Überlegungen
+Dilutes existing shareholders|Verwässert bestehende Aktionäre
+Changes ownership structure|Ändert die Eigentumsstruktur
+May affect voting rights|Kann Stimmrechte beeinflussen
+Requires regulatory approval|Erfordert regulatorische Genehmigung
+Debt Snowball Prioritization|Schulden-Schneeball-Priorisierung
+Prioritize debt repayment using the snowball method for faster debt elimination|Priorisieren Sie die Schuldentilgung mit der Schneeball-Methode für schnellere Schuldenbeseitigung
+Debt Snowball Calculator|Schulden-Schneeball-Rechner
+Monthly Payment Capacity (€)|Monatliche Zahlungskapazität (€)
+Enter monthly payment capacity|Monatliche Zahlungskapazität eingeben
+Total amount you can pay towards debt monthly|Gesamtbetrag, den Sie monatlich für Schulden zahlen können
+Add Your Debts|Fügen Sie Ihre Schulden hinzu
+Debt Name|Schuldenname
+e.g., Credit Card|z.B. Kreditkarte
+Balance (€)|Saldo (€)
+Enter balance|Saldo eingeben
+Interest Rate (%)|Zinssatz (%)
+Enter rate|Zinssatz eingeben
+Add Another Debt|Weitere Schulden hinzufügen
+Calculate Snowball Plan|Schneeball-Plan berechnen
+Debt Snowball Plan|Schulden-Schneeball-Plan
+Debt Payoff Schedule|Schuldentilgungsplan
+Debt|Schulden
+Balance|Saldo
+Monthly Payment|Monatliche Zahlung
+Months to Payoff|Monate bis zur Tilgung
+About the Debt Snowball Method|Über die Schulden-Schneeball-Methode
+How It Works|Wie es funktioniert
+The debt snowball method prioritizes paying off debts from smallest to largest balance, regardless of interest rate.|Die Schulden-Schneeball-Methode priorisiert die Tilgung von Schulden vom kleinsten zum größten Saldo, unabhängig vom Zinssatz.
+Benefits|Vorteile
+Provides psychological motivation|Bietet psychologische Motivation
+Simplifies debt management|Vereinfacht das Schuldenmanagement
+Creates momentum|Schafft Schwung
+Reduces number of debts quickly|Reduziert schnell die Anzahl der Schulden
+Considerations|Überlegungen
+May not minimize total interest|Minimiert möglicherweise nicht die Gesamtzinsen
+Higher interest debts may take longer|Höher verzinsliche Schulden können länger dauern
+Requires discipline|Erfordert Disziplin
+May not suit all situations|Passt möglicherweise nicht zu allen Situationen
+This tool provides estimates. Consider your specific financial situation and consult professionals if needed.|Dieses Tool bietet Schätzungen. Berücksichtigen Sie Ihre spezifische finanzielle Situation und konsultieren Sie bei Bedarf Fachleute.
+EU/Federal Funding Guidance|EU/Bundesfinanzierungsberatung
+Explore funding opportunities and guidance for German SMEs|Erkunden Sie Finanzierungsmöglichkeiten und Beratung für deutsche KMU
+Funding Search|Finanzierungssuche
+Company Size|Unternehmensgröße
+Select company size|Unternehmensgröße auswählen
+Micro (1-9 employees)|Mikro (1-9 Mitarbeiter)
+Small (10-49 employees)|Klein (10-49 Mitarbeiter)
+Medium (50-249 employees)|Mittel (50-249 Mitarbeiter)
+Industry Sector|Branchensektor
+Select sector|Sektor auswählen
+Technology|Technologie
+Manufacturing|Produktion
+Services|Dienstleistungen
+Retail|Einzelhandel
+Construction|Bauwesen
+Funding Type|Finanzierungstyp
+Select funding type|Finanzierungstyp auswählen
+Grant|Zuschuss
+Loan|Darlehen
+Equity|Eigenkapital
+Subsidy|Subvention
+Funding Amount (€)|Finanzierungsbetrag (€)
+Enter funding amount|Finanzierungsbetrag eingeben
+Search Funding Opportunities|Finanzierungsmöglichkeiten suchen
+Funding Opportunities|Finanzierungsmöglichkeiten
+Available Programs|Verfügbare Programme
+Amount|Betrag
+Deadline|Frist
+About EU/Federal Funding|Über EU/Bundesfinanzierung
+EU Funding Programs|EU-Finanzierungsprogramme
+Horizon Europe|Horizont Europa
+European Regional Development Fund|Europäischer Fonds für regionale Entwicklung
+European Social Fund|Europäischer Sozialfonds
+Digital Europe Programme|Programm Digitales Europa
+German Federal Programs|Deutsche Bundesprogramme
+KfW Development Bank|KfW-Entwicklungsbank
+Federal Ministry Programs|Bundesministeriumsprogramme
+State-level incentives|Landesebene-Anreize
+Innovation vouchers|Innovationsgutscheine
+Tips for Success|Tipps für den Erfolg
+Prepare detailed business plans|Erstellen Sie detaillierte Geschäftspläne
+Understand eligibility criteria|Verstehen Sie die Berechtigungskriterien
+Meet application deadlines|Halten Sie Bewerbungsfristen ein
+Seek professional assistance|Suchen Sie professionelle Hilfe
+This tool provides general guidance. Always verify current program details and consult with funding specialists.|Dieses Tool bietet allgemeine Beratung. Überprüfen Sie immer aktuelle Programmdetails und konsultieren Sie Finanzierungsspezialisten.
+Debt Covenant Tracking|Schulden-Covenant-Verfolgung
+Track and monitor debt covenants to maintain compliance|Verfolgen und überwachen Sie Schulden-Covenants zur Einhaltung der Compliance
+Add Covenant|Covenant hinzufügen
+Covenant Name|Covenant-Name
+Enter covenant name|Covenant-Name eingeben
+Covenant Type|Covenant-Typ
+Select type|Typ auswählen
+Financial Ratio|Finanzkennzahl
+Operational|Operativ
+Reporting|Berichterstattung
+Other|Andere
+Threshold Value|Schwellenwert
+Enter threshold|Schwellenwert eingeben
+Current Value|Aktueller Wert
+Enter current value|Aktuellen Wert eingeben
+Description|Beschreibung
+Enter covenant description|Covenant-Beschreibung eingeben
+Covenant Dashboard|Covenant-Dashboard
+No covenants added yet. Add your first covenant above.|Noch keine Covenants hinzugefügt. Fügen Sie Ihren ersten Covenant oben hinzu.
+About Debt Covenants|Über Schulden-Covenants
+What are Covenants?|Was sind Covenants?
+Debt covenants are agreements between borrowers and lenders that specify certain conditions and restrictions.|Schulden-Covenants sind Vereinbarungen zwischen Kreditnehmern und Kreditgebern, die bestimmte Bedingungen und Einschränkungen festlegen.
+Common Types|Häufige Typen
+Debt-to-equity ratio limits|Schulden-Eigenkapital-Verhältnis-Grenzen
+Interest coverage ratios|Zinsdeckungsgrade
+Working capital requirements|Arbeitskapital-Anforderungen
+Cash flow covenants|Cashflow-Covenants
+Why Monitor?|Warum überwachen?
+Prevents covenant breaches|Verhindert Covenant-Verletzungen
+Maintains lender relationships|Erhält Kreditgeber-Beziehungen
+Avoids penalties|Vermeidet Strafen
+Ensures compliance|Stellt Compliance sicher
+This tool helps track covenants but does not replace professional legal or financial advice.|Dieses Tool hilft bei der Verfolgung von Covenants, ersetzt aber keine professionelle rechtliche oder finanzielle Beratung.
+Support Development|Entwicklung unterstützen
+Help continue building tools for German SMEs|Helfen Sie beim weiteren Aufbau von Tools für deutsche KMU
+A Friendly American Initiative|Eine freundliche amerikanische Initiative
+As a friendly American citizen, I believe in building bridges between nations through technology and innovation. This SME Debt Management Tool represents a bipartisan effort to support German small and medium enterprises with practical, free-to-use financial tools.|Als freundlicher amerikanischer Bürger glaube ich daran, Brücken zwischen Nationen durch Technologie und Innovation zu bauen. Dieses SME-Schuldenmanagement-Tool stellt eine parteiübergreifende Anstrengung dar, deutsche kleine und mittlere Unternehmen mit praktischen, kostenlosen Finanztools zu unterstützen.
+Your support helps me continue developing tools that benefit German businesses, strengthen economic ties, and demonstrate the positive impact of international cooperation.|Ihre Unterstützung hilft mir, weiterhin Tools zu entwickeln, die deutschen Unternehmen zugute kommen, wirtschaftliche Bindungen stärken und die positive Wirkung internationaler Zusammenarbeit demonstrieren.
+100% Transparent:|100% Transparent:
+All donations go directly toward development costs, hosting, and creating new tools for German SMEs.|Alle Spenden gehen direkt an Entwicklungskosten, Hosting und die Erstellung neuer Tools für deutsche KMU.
+Development Costs|Entwicklungskosten
+Hosting, domains, tools|Hosting, Domains, Tools
+Translation Work|Übersetzungsarbeit
+Professional German translations|Professionelle deutsche Übersetzungen
+New Features|Neue Funktionen
+Additional tools for SMEs|Zusätzliche Tools für KMU
+Buy Me a Coffee|Kaufen Sie mir einen Kaffee
+Support ongoing development with a small contribution. Every coffee helps fuel the next feature!|Unterstützen Sie die laufende Entwicklung mit einem kleinen Beitrag. Jeder Kaffee hilft, die nächste Funktion anzutreiben!
+Buy Coffee|Kaffee kaufen
+PayPal Donation|PayPal-Spende
+Make a direct donation through PayPal. Secure, fast, and supports continued development.|Machen Sie eine direkte Spende über PayPal. Sicher, schnell und unterstützt die fortlaufende Entwicklung.
+Donate via PayPal|Via PayPal spenden
+Your Impact|Ihr Einfluss
+German SMEs Helped|Deutschen KMU geholfen
+Calculations Performed|Berechnungen durchgeführt
+Debt Analyzed|Schulden analysiert
+Countries Reached|Länder erreicht
+What's Next?|Was kommt als nächstes?
+Planned Features|Geplante Funktionen
+Advanced financial modeling tools|Erweiterte Finanzmodellierungstools
+Integration with German banking APIs|Integration mit deutschen Banking-APIs
+Automated compliance checking|Automatisierte Compliance-Prüfung
+Multi-language support (French, Spanish)|Mehrsprachige Unterstützung (Französisch, Spanisch)
+Mobile app development|Mobile App-Entwicklung
+Your Ideas Matter|Ihre Ideen zählen
+Have suggestions for new features? Your feedback shapes the future of these tools.|Haben Sie Vorschläge für neue Funktionen? Ihr Feedback prägt die Zukunft dieser Tools.
+Send Feedback|Feedback senden
+Other Ways to Help|Andere Wege zu helfen
+Share the Tool|Tool teilen
+Tell other German SMEs about this free resource|Erzählen Sie anderen deutschen KMU von dieser kostenlosen Ressource
+Rate & Review|Bewerten & Rezensieren
+Leave feedback to help others discover the tool|Hinterlassen Sie Feedback, um anderen zu helfen, das Tool zu entdecken
+Contribute Code|Code beitragen
+Help improve the tool with your expertise|Helfen Sie, das Tool mit Ihrer Expertise zu verbessern
+Thank You!|Vielen Dank!
+Your support helps me continue building tools that make a real difference for German businesses. Together, we're strengthening international cooperation through technology.|Ihre Unterstützung hilft mir, weiterhin Tools zu entwickeln, die einen echten Unterschied für deutsche Unternehmen machen. Gemeinsam stärken wir die internationale Zusammenarbeit durch Technologie.
+Made with|Gemacht mit
+by a friendly American citizen for German SMEs|von einem freundlichen amerikanischen Bürger für deutsche KMU
+Support|Unterstützung

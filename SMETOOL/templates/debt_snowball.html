@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Debt Snowball') }} - {{ _('SME Debt Tool') }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-primary">
+                <i class="fas fa-snowflake me-2"></i>{{ _('Debt Snowball Prioritization') }}
+            </h1>
+            <p class="lead text-muted">{{ _('Prioritize debt repayment using the snowball method for faster debt elimination') }}</p>
+        </div>
+
+        <!-- Calculator Form -->
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-calculator me-2"></i>{{ _('Debt Snowball Calculator') }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <form id="debtSnowballForm">
+                    <div class="mb-3">
+                        <label for="monthlyPayment" class="form-label">
+                            <i class="fas fa-euro-sign me-1"></i>{{ _('Monthly Payment Capacity (€)') }}
+                        </label>
+                        <input type="number" class="form-control" id="monthlyPayment" name="monthlyPayment" 
+                               placeholder="{{ _('Enter monthly payment capacity') }}" required>
+                        <div class="form-text">{{ _('Total amount you can pay towards debt monthly') }}</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6>{{ _('Add Your Debts') }}</h6>
+                        <div id="debtList">
+                            <div class="debt-item mb-3 p-3 border rounded">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="form-label">{{ _('Debt Name') }}</label>
+                                        <input type="text" class="form-control" name="debtName" placeholder="{{ _('e.g., Credit Card') }}">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">{{ _('Balance (€)') }}</label>
+                                        <input type="number" class="form-control" name="debtBalance" placeholder="{{ _('Enter balance') }}">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">{{ _('Interest Rate (%)') }}</label>
+                                        <input type="number" step="0.01" class="form-control" name="debtRate" placeholder="{{ _('Enter rate') }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary" onclick="addDebt()">
+                            <i class="fas fa-plus me-1"></i>{{ _('Add Another Debt') }}
+                        </button>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calculator me-2"></i>{{ _('Calculate Snowball Plan') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="card shadow mt-4" style="display: none;">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-line me-2"></i>{{ _('Debt Snowball Plan') }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="snowballResults"></div>
+            </div>
+        </div>
+
+        <!-- Information Panel -->
+        <div class="card shadow mt-4">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>{{ _('About the Debt Snowball Method') }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-snowflake text-primary me-1"></i>{{ _('How It Works') }}</h6>
+                        <p class="small">{{ _('The debt snowball method prioritizes paying off debts from smallest to largest balance, regardless of interest rate.') }}</p>
+                        
+                        <h6><i class="fas fa-lightbulb text-success me-1"></i>{{ _('Benefits') }}</h6>
+                        <ul class="small">
+                            <li>{{ _('Provides psychological motivation') }}</li>
+                            <li>{{ _('Simplifies debt management') }}</li>
+                            <li>{{ _('Creates momentum') }}</li>
+                            <li>{{ _('Reduces number of debts quickly') }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-exclamation-triangle text-warning me-1"></i>{{ _('Considerations') }}</h6>
+                        <ul class="small">
+                            <li>{{ _('May not minimize total interest') }}</li>
+                            <li>{{ _('Higher interest debts may take longer') }}</li>
+                            <li>{{ _('Requires discipline') }}</li>
+                            <li>{{ _('May not suit all situations') }}</li>
+                        </ul>
+                        
+                        <h6><i class="fas fa-lightbulb text-info me-1"></i>{{ _('Important Note') }}</h6>
+                        <p class="small">{{ _('This tool provides estimates. Consider your specific financial situation and consult professionals if needed.') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function addDebt() {
+        const debtList = document.getElementById('debtList');
+        const newDebt = document.createElement('div');
+        newDebt.className = 'debt-item mb-3 p-3 border rounded';
+        newDebt.innerHTML = `
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="form-label">{{ _('Debt Name') }}</label>
+                    <input type="text" class="form-control" name="debtName" placeholder="{{ _('e.g., Credit Card') }}">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">{{ _('Balance (€)') }}</label>
+                    <input type="number" class="form-control" name="debtBalance" placeholder="{{ _('Enter balance') }}">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">{{ _('Interest Rate (%)') }}</label>
+                    <input type="number" step="0.01" class="form-control" name="debtRate" placeholder="{{ _('Enter rate') }}">
+                </div>
+            </div>
+        `;
+        debtList.appendChild(newDebt);
+    }
+
+    document.getElementById('debtSnowballForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const monthlyPayment = parseFloat(formData.get('monthlyPayment'));
+        
+        const debts = [];
+        const debtItems = document.querySelectorAll('.debt-item');
+        
+        debtItems.forEach(item => {
+            const name = item.querySelector('input[name="debtName"]').value;
+            const balance = parseFloat(item.querySelector('input[name="debtBalance"]').value);
+            const rate = parseFloat(item.querySelector('input[name="debtRate"]').value);
+            
+            if (name && balance && rate) {
+                debts.push({ name, balance, rate });
+            }
+        });
+        
+        const data = {
+            monthlyPayment: monthlyPayment,
+            debts: debts
+        };
+        
+        try {
+            const response = await fetch('/api/debt-snowball', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            displayResults(result);
+        } catch (error) {
+            console.error('Error:', error);
+            alert('{{ _("An error occurred. Please try again.") }}');
+        }
+    });
+    
+    function displayResults(result) {
+        const resultsDiv = document.getElementById('snowballResults');
+        resultsDiv.innerHTML = '<h6>{{ _("Debt Payoff Schedule") }}</h6><div class="table-responsive"><table class="table table-striped"><thead><tr><th>{{ _("Debt") }}</th><th>{{ _("Balance") }}</th><th>{{ _("Monthly Payment") }}</th><th>{{ _("Months to Payoff") }}</th></tr></thead><tbody></tbody></table></div>';
+        
+        const tbody = resultsDiv.querySelector('tbody');
+        result.payoffSchedule.forEach(debt => {
+            const row = tbody.insertRow();
+            row.insertCell(0).textContent = debt.name;
+            row.insertCell(1).textContent = '€' + debt.balance.toLocaleString();
+            row.insertCell(2).textContent = '€' + debt.monthlyPayment.toLocaleString();
+            row.insertCell(3).textContent = debt.monthsToPayoff;
+        });
+        
+        document.getElementById('results').style.display = 'block';
+    }
+</script>
+{% endblock %}

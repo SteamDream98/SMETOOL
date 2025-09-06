@@ -1,0 +1,531 @@
+# German translations for SME Debt Management Tool
+# Copyright (C) 2024 SME Debt Management Tool
+# This file is distributed under the same license as the SME Debt Management Tool project.
+msgid ""
+msgstr ""
+"Project-Id-Version: SME Debt Management Tool 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: 2024-01-01 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Navigation
+msgid "SME Debt Tool"
+msgstr "SME-Schulden-Tool"
+
+msgid "Debt Brake"
+msgstr "Schuldenbremse"
+
+msgid "Cost Analysis"
+msgstr "Kostenanalyse"
+
+msgid "Debt-Equity Swap"
+msgstr "Schulden-Eigenkapital-Tausch"
+
+msgid "Debt Snowball"
+msgstr "Schulden-Schneeball"
+
+msgid "Funding"
+msgstr "Finanzierung"
+
+msgid "Covenants"
+msgstr "Covenants"
+
+msgid "Language"
+msgstr "Sprache"
+
+msgid "About"
+msgstr "Über"
+
+# Main page
+msgid "SME Debt Management Tool"
+msgstr "SME-Schuldenmanagement-Tool"
+
+msgid "Comprehensive debt management solutions for German SMEs"
+msgstr "Umfassende Schuldenmanagement-Lösungen für deutsche KMU"
+
+msgid "Calculate"
+msgstr "Berechnen"
+
+msgid "Analyze"
+msgstr "Analysieren"
+
+msgid "Simulate"
+msgstr "Simulieren"
+
+msgid "Prioritize"
+msgstr "Priorisieren"
+
+msgid "Explore"
+msgstr "Erkunden"
+
+msgid "Track"
+msgstr "Verfolgen"
+
+# Debt Brake Calculator
+msgid "Debt Brake Calculator"
+msgstr "Schuldenbremse-Rechner"
+
+msgid "Calculate borrowing limits based on Germany's debt brake mechanism"
+msgstr "Berechnen Sie Kreditlimits basierend auf Deutschlands Schuldenbremse-Mechanismus"
+
+msgid "Annual Revenue (€)"
+msgstr "Jahresumsatz (€)"
+
+msgid "Enter annual revenue"
+msgstr "Jahresumsatz eingeben"
+
+msgid "Your company's total annual revenue"
+msgstr "Der Gesamtjahresumsatz Ihres Unternehmens"
+
+msgid "Current Debt (€)"
+msgstr "Aktuelle Schulden (€)"
+
+msgid "Enter current debt"
+msgstr "Aktuelle Schulden eingeben"
+
+msgid "Your current outstanding debt"
+msgstr "Ihre aktuellen ausstehenden Schulden"
+
+msgid "Calculate Debt Limit"
+msgstr "Schuldenlimit berechnen"
+
+msgid "Debt Brake Limit"
+msgstr "Schuldenbremse-Limit"
+
+msgid "0.35% of annual revenue"
+msgstr "0,35% des Jahresumsatzes"
+
+msgid "Available Capacity"
+msgstr "Verfügbare Kapazität"
+
+msgid "Remaining borrowing capacity"
+msgstr "Verbleibende Kreditkapazität"
+
+msgid "Current Debt Usage"
+msgstr "Aktuelle Schuldennutzung"
+
+msgid "Within Limits"
+msgstr "Innerhalb der Grenzen"
+
+msgid "Near Limit"
+msgstr "Nahe dem Limit"
+
+msgid "Over Limit"
+msgstr "Über dem Limit"
+
+# Cost Analysis
+msgid "Cost of Debt Analysis"
+msgstr "Schuldenkosten-Analyse"
+
+msgid "Analyze pre-tax and after-tax cost of debt with detailed breakdowns"
+msgstr "Analysieren Sie Vor- und Nachsteuer-Schuldenkosten mit detaillierten Aufschlüsselungen"
+
+msgid "Loan Principal (€)"
+msgstr "Darlehenssumme (€)"
+
+msgid "Enter loan amount"
+msgstr "Darlehenssumme eingeben"
+
+msgid "Total amount borrowed"
+msgstr "Gesamtbetrag des Darlehens"
+
+msgid "Interest Rate (%)"
+msgstr "Zinssatz (%)"
+
+msgid "Enter interest rate"
+msgstr "Zinssatz eingeben"
+
+msgid "Annual interest rate"
+msgstr "Jährlicher Zinssatz"
+
+msgid "Loan Term (Years)"
+msgstr "Darlehenslaufzeit (Jahre)"
+
+msgid "Enter loan term"
+msgstr "Darlehenslaufzeit eingeben"
+
+msgid "Length of loan in years"
+msgstr "Länge des Darlehens in Jahren"
+
+msgid "Tax Rate (%)"
+msgstr "Steuersatz (%)"
+
+msgid "Enter tax rate"
+msgstr "Steuersatz eingeben"
+
+msgid "Corporate tax rate (default: 30%)"
+msgstr "Körperschaftsteuersatz (Standard: 30%)"
+
+msgid "Calculate Cost Analysis"
+msgstr "Kostenanalyse berechnen"
+
+msgid "Monthly Payment"
+msgstr "Monatliche Zahlung"
+
+msgid "Fixed monthly payment"
+msgstr "Feste monatliche Zahlung"
+
+msgid "Total Payment"
+msgstr "Gesamtzahlung"
+
+msgid "Total amount to be paid"
+msgstr "Gesamtbetrag zu zahlen"
+
+msgid "Total Interest (Pre-tax)"
+msgstr "Gesamtzinsen (Vor Steuern)"
+
+msgid "Interest before tax benefits"
+msgstr "Zinsen vor Steuervorteilen"
+
+msgid "After-tax Interest"
+msgstr "Nachsteuer-Zinsen"
+
+msgid "Interest after tax benefits"
+msgstr "Zinsen nach Steuervorteilen"
+
+msgid "Effective Interest Rate"
+msgstr "Effektiver Zinssatz"
+
+msgid "After-tax effective interest rate"
+msgstr "Nachsteuer-effektiver Zinssatz"
+
+# Debt-Equity Swap
+msgid "Debt-Equity Swap Simulation"
+msgstr "Schulden-Eigenkapital-Tausch-Simulation"
+
+msgid "Simulate partnerships and equity conversions to optimize capital structure"
+msgstr "Simulieren Sie Partnerschaften und Eigenkapitalumwandlungen zur Optimierung der Kapitalstruktur"
+
+msgid "Debt to Convert (€)"
+msgstr "Zu konvertierende Schulden (€)"
+
+msgid "Enter debt amount"
+msgstr "Schuldenbetrag eingeben"
+
+msgid "Amount of debt to convert to equity"
+msgstr "Betrag der in Eigenkapital umzuwandelnden Schulden"
+
+msgid "Company Valuation (€)"
+msgstr "Unternehmensbewertung (€)"
+
+msgid "Enter company value"
+msgstr "Unternehmenswert eingeben"
+
+msgid "Current company valuation"
+msgstr "Aktuelle Unternehmensbewertung"
+
+msgid "Current Equity %"
+msgstr "Aktuelles Eigenkapital %"
+
+msgid "Enter current equity %"
+msgstr "Aktuelles Eigenkapital % eingeben"
+
+msgid "Current equity ownership percentage"
+msgstr "Aktueller Eigenkapitalbesitz-Prozentsatz"
+
+msgid "Conversion Rate"
+msgstr "Umwandlungsrate"
+
+msgid "Enter conversion rate"
+msgstr "Umwandlungsrate eingeben"
+
+msgid "Debt to equity conversion ratio"
+msgstr "Schulden-zu-Eigenkapital-Umwandlungsverhältnis"
+
+msgid "Simulate Swap"
+msgstr "Tausch simulieren"
+
+# Debt Snowball
+msgid "Debt Snowball Prioritization"
+msgstr "Schulden-Schneeball-Priorisierung"
+
+msgid "Prioritize debt repayment by interest rate for maximum efficiency"
+msgstr "Priorisieren Sie Schuldentilgung nach Zinssatz für maximale Effizienz"
+
+msgid "Debt Name"
+msgstr "Schuldenname"
+
+msgid "Principal (€)"
+msgstr "Hauptsumme (€)"
+
+msgid "Interest Rate (%)"
+msgstr "Zinssatz (%)"
+
+msgid "Min Payment (€)"
+msgstr "Mindestzahlung (€)"
+
+msgid "Add Debt"
+msgstr "Schulden hinzufügen"
+
+msgid "Remove Last"
+msgstr "Letzte entfernen"
+
+msgid "Calculate Priority Order"
+msgstr "Prioritätsreihenfolge berechnen"
+
+# Funding Guidance
+msgid "EU/Federal Funding Guidance"
+msgstr "EU/Bundes-Finanzierungsberatung"
+
+msgid "Get tailored advice on available funding programs for German SMEs"
+msgstr "Erhalten Sie maßgeschneiderte Beratung zu verfügbaren Finanzierungsprogrammen für deutsche KMU"
+
+msgid "Company Size"
+msgstr "Unternehmensgröße"
+
+msgid "Select company size"
+msgstr "Unternehmensgröße auswählen"
+
+msgid "Small (1-49 employees)"
+msgstr "Klein (1-49 Mitarbeiter)"
+
+msgid "Medium (50-249 employees)"
+msgstr "Mittel (50-249 Mitarbeiter)"
+
+msgid "Large (250+ employees)"
+msgstr "Groß (250+ Mitarbeiter)"
+
+msgid "Number of employees"
+msgstr "Anzahl der Mitarbeiter"
+
+msgid "Industry"
+msgstr "Branche"
+
+msgid "Select industry"
+msgstr "Branche auswählen"
+
+msgid "Manufacturing"
+msgstr "Produktion"
+
+msgid "Technology/IT"
+msgstr "Technologie/IT"
+
+msgid "Retail/Trade"
+msgstr "Einzelhandel/Handel"
+
+msgid "Professional Services"
+msgstr "Professionelle Dienstleistungen"
+
+msgid "Agriculture"
+msgstr "Landwirtschaft"
+
+msgid "Construction"
+msgstr "Bauwesen"
+
+msgid "Healthcare"
+msgstr "Gesundheitswesen"
+
+msgid "Other"
+msgstr "Andere"
+
+msgid "Your business sector"
+msgstr "Ihr Geschäftsbereich"
+
+msgid "Funding Purpose"
+msgstr "Finanzierungszweck"
+
+msgid "Select purpose"
+msgstr "Zweck auswählen"
+
+msgid "Working Capital"
+msgstr "Betriebskapital"
+
+msgid "Equipment Purchase"
+msgstr "Gerätekauf"
+
+msgid "Business Expansion"
+msgstr "Geschäftserweiterung"
+
+msgid "Innovation/R&D"
+msgstr "Innovation/F&E"
+
+msgid "Digital Transformation"
+msgstr "Digitale Transformation"
+
+msgid "Sustainability/Green"
+msgstr "Nachhaltigkeit/Grün"
+
+msgid "Export Development"
+msgstr "Exportentwicklung"
+
+msgid "What will the funding be used for?"
+msgstr "Wofür wird die Finanzierung verwendet?"
+
+msgid "Funding Amount Needed (€)"
+msgstr "Benötigter Finanzierungsbetrag (€)"
+
+msgid "Enter amount needed"
+msgstr "Benötigten Betrag eingeben"
+
+msgid "Amount of funding required"
+msgstr "Erforderlicher Finanzierungsbetrag"
+
+msgid "Find Funding Programs"
+msgstr "Finanzierungsprogramme finden"
+
+# Covenant Tracking
+msgid "Debt Covenant Tracking"
+msgstr "Schulden-Covenant-Verfolgung"
+
+msgid "Monitor financial ratios for compliance with loan agreements"
+msgstr "Überwachen Sie Finanzkennzahlen auf Einhaltung von Darlehensvereinbarungen"
+
+msgid "Total Debt (€)"
+msgstr "Gesamtschulden (€)"
+
+msgid "Enter total debt"
+msgstr "Gesamtschulden eingeben"
+
+msgid "Total outstanding debt"
+msgstr "Gesamte ausstehende Schulden"
+
+msgid "EBITDA (€)"
+msgstr "EBITDA (€)"
+
+msgid "Enter EBITDA"
+msgstr "EBITDA eingeben"
+
+msgid "Earnings before interest, taxes, depreciation, and amortization"
+msgstr "Ergebnis vor Zinsen, Steuern, Abschreibungen und Amortisationen"
+
+msgid "Current Assets (€)"
+msgstr "Umlaufvermögen (€)"
+
+msgid "Enter current assets"
+msgstr "Umlaufvermögen eingeben"
+
+msgid "Assets that can be converted to cash within one year"
+msgstr "Vermögenswerte, die innerhalb eines Jahres in Bargeld umgewandelt werden können"
+
+msgid "Current Liabilities (€)"
+msgstr "Kurzfristige Verbindlichkeiten (€)"
+
+msgid "Enter current liabilities"
+msgstr "Kurzfristige Verbindlichkeiten eingeben"
+
+msgid "Debts due within one year"
+msgstr "Innerhalb eines Jahres fällige Schulden"
+
+msgid "Net Worth/Equity (€)"
+msgstr "Nettovermögen/Eigenkapital (€)"
+
+msgid "Enter net worth"
+msgstr "Nettovermögen eingeben"
+
+msgid "Total assets minus total liabilities"
+msgstr "Gesamtvermögen minus Gesamtverbindlichkeiten"
+
+msgid "Company Name"
+msgstr "Unternehmensname"
+
+msgid "Enter company name"
+msgstr "Unternehmensname eingeben"
+
+msgid "For reporting purposes"
+msgstr "Für Berichtszwecke"
+
+msgid "Check Covenant Compliance"
+msgstr "Covenant-Compliance prüfen"
+
+msgid "Overall Compliance Status"
+msgstr "Gesamt-Compliance-Status"
+
+msgid "Compliant"
+msgstr "Konform"
+
+msgid "Non-Compliant"
+msgstr "Nicht konform"
+
+msgid "All covenants are within acceptable limits"
+msgstr "Alle Covenants sind innerhalb akzeptabler Grenzen"
+
+msgid "One or more covenants are breached"
+msgstr "Ein oder mehrere Covenants werden verletzt"
+
+msgid "Debt-to-EBITDA Ratio"
+msgstr "Schulden-zu-EBITDA-Verhältnis"
+
+msgid "Threshold: ≤ 3.0"
+msgstr "Schwellenwert: ≤ 3,0"
+
+msgid "Current Ratio"
+msgstr "Liquiditätsgrad"
+
+msgid "Threshold: ≥ 1.2"
+msgstr "Schwellenwert: ≥ 1,2"
+
+msgid "Debt-to-Equity Ratio"
+msgstr "Schulden-zu-Eigenkapital-Verhältnis"
+
+msgid "Threshold: ≤ 2.0"
+msgstr "Schwellenwert: ≤ 2,0"
+
+msgid "Breached"
+msgstr "Verletzt"
+
+# Common terms
+msgid "Principal"
+msgstr "Hauptsumme"
+
+msgid "Interest"
+msgstr "Zinsen"
+
+msgid "Tax Savings"
+msgstr "Steuerersparnisse"
+
+msgid "Remaining Debt"
+msgstr "Verbleibende Schulden"
+
+msgid "Total Equity"
+msgstr "Gesamtes Eigenkapital"
+
+msgid "Total Capital"
+msgstr "Gesamtkapital"
+
+msgid "Programs Found"
+msgstr "Gefundene Programme"
+
+msgid "Matching funding programs"
+msgstr "Passende Finanzierungsprogramme"
+
+msgid "Next Steps"
+msgstr "Nächste Schritte"
+
+msgid "Review program details and contact the funding agencies for application procedures."
+msgstr "Überprüfen Sie Programmdetails und kontaktieren Sie die Finanzierungsagenturen für Antragsverfahren."
+
+# Footer
+msgid "SME Debt Management Tool"
+msgstr "SME-Schuldenmanagement-Tool"
+
+msgid "Comprehensive debt management solutions for German SMEs"
+msgstr "Umfassende Schuldenmanagement-Lösungen für deutsche KMU"
+
+msgid "Privacy Policy"
+msgstr "Datenschutzrichtlinie"
+
+msgid "Terms of Service"
+msgstr "Nutzungsbedingungen"
+
+msgid "This tool is for educational purposes only. Consult financial professionals for advice."
+msgstr "Dieses Tool dient nur zu Bildungszwecken. Konsultieren Sie Finanzexperten für Beratung."
+
+msgid "Built with Flask & Bootstrap"
+msgstr "Erstellt mit Flask & Bootstrap"
+
+# Error messages
+msgid "An error occurred. Please try again."
+msgstr "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+
+msgid "Please fill in all required fields."
+msgstr "Bitte füllen Sie alle erforderlichen Felder aus."
+
+msgid "Invalid input. Please check your values."
+msgstr "Ungültige Eingabe. Bitte überprüfen Sie Ihre Werte."

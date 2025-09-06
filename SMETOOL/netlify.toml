@@ -1,0 +1,25 @@
+[build]
+  command = "python build_static.py"
+  publish = "dist"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "python build_static.py"
+
+[context.deploy-preview]
+  command = "python build_static.py"
+
+[context.branch-deploy]
+  command = "python build_static.py"

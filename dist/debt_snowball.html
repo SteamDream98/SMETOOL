@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Comprehensive debt management solutions for German SMEs. Calculate debt limits, analyze costs, prioritize repayments, and find funding opportunities.">
+    <meta name="keywords" content="SME debt management, German debt brake, cost analysis, debt snowball, funding guidance, covenant tracking, small business finance">
+    <meta name="author" content="SME Debt Management Tool">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SME Debt Tool">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0d6efd">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SME Debt Management Tool - Germany">
+    <meta property="og:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/">
+    <meta property="og:image" content="/static/og-image.png">
+    <meta property="og:site_name" content="SME Debt Management Tool">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SME Debt Management Tool - Germany">
+    <meta name="twitter:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta name="twitter:image" content="/static/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/static/manifest.json">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
+    <link href="/static/css/style.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SME Debt Management Tool",
+        "description": "Comprehensive debt management solutions for German SMEs",
+        "url": "http://localhost/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "SME Debt Management Tool"
+        }
+    }
+    </script>
+    
+    <title>SME-Schuldenmanagement-Tool - Deutschland</title>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    
+    <!-- Mobile-First Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/" aria-label="SME-Schuldenmanagement-Tool Startseite">
+                <i class="fas fa-chart-line me-2" aria-hidden="true"></i>
+                <span class="d-none d-sm-inline">SME-Schulden-Tool</span>
+                <span class="d-sm-none">SME</span>
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Main navigation -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-brake">
+                            <i class="fas fa-shield-alt me-1" aria-hidden="true"></i>Schuldenbremse
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/cost-analysis">
+                            <i class="fas fa-calculator me-1" aria-hidden="true"></i>Kostenanalyse
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-equity">
+                            <i class="fas fa-exchange-alt me-1" aria-hidden="true"></i>Schulden-Eigenkapital-Tausch
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-snowball">
+                            <i class="fas fa-snowflake me-1" aria-hidden="true"></i>Schulden-Schneeball
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/funding-guidance">
+                            <i class="fas fa-euro-sign me-1" aria-hidden="true"></i>Finanzierung
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/covenant-tracking">
+                            <i class="fas fa-clipboard-check me-1" aria-hidden="true"></i>Covenants
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Right side navigation -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about">
+                            <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Über</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/donation">
+                            <i class="fas fa-heart me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Unterstützung</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/set-language/de" title="Zu Deutsch wechseln">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">DE</span>
+                            <span class="d-md-none">DE</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content with top padding for fixed navbar -->
+    <main id="main-content" class="container-fluid px-3 py-4" style="margin-top: 76px;">
+        
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <i class="fas fa-snowflake me-2"></i>Schulden-Schneeball-Priorisierung
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-4">Optimieren Sie Ihre Schuldenrückzahlungsstrategie mit der Schneeball-Methode.</p>
+                
+                <form id="debtSnowballForm">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="monthlyPayment" class="form-label">Monatliche Gesamtzahlung (€)</label>
+                            <input type="number" class="form-control" id="monthlyPayment" name="monthlyPayment" 
+                                   placeholder="2000" min="0" step="100" required>
+                            <div class="form-text">Gesamtbetrag verfügbar für Schuldenzahlungen</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="strategy" class="form-label">Rückzahlungsstrategie</label>
+                            <select class="form-select" id="strategy" name="strategy">
+                                <option value="snowball">Schneeball (Kleinster Saldo zuerst)</option>
+                                <option value="avalanche">Lawine (Höchster Zinssatz zuerst)</option>
+                            </select>
+                            <div class="form-text">Wählen Sie Ihre Rückzahlungsstrategie</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Debt Entries -->
+                    <div id="debtEntries" class="mt-4">
+                        <h5 class="mb-3">Schuldenkonten</h5>
+                        <div class="debt-entry">
+                            <div class="row g-3">
+                                <div class="col-12 col-md-4">
+                                    <label class="form-label">Schuldenname</label>
+                                    <input type="text" class="form-control debt-name" placeholder="Credit Card" required>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <label class="form-label">Saldo (€)</label>
+                                    <input type="number" class="form-control debt-balance" placeholder="5000" min="0" step="100" required>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <label class="form-label">Zinssatz (%)</label>
+                                    <input type="number" class="form-control debt-rate" placeholder="18" min="0" max="50" step="0.1" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mt-3">
+                        <button type="button" class="btn btn-outline-primary" onclick="addDebtEntry()">
+                            <i class="fas fa-plus me-2"></i>Schulden hinzufügen
+                        </button>
+                        <button type="button" class="btn btn-outline-danger" onclick="removeDebtEntry()">
+                            <i class="fas fa-minus me-2"></i>Schulden entfernen
+                        </button>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
+                            <i class="fas fa-undo me-2"></i>Zurücksetzen
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="calculateSnowball()">
+                            <i class="fas fa-snowflake me-2"></i>Berechnen
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Results Section -->
+                <div id="results" class="mt-4" style="display: none;">
+                    <hr>
+                    <h4 class="mb-3">
+                        <i class="fas fa-chart-line me-2"></i>Rückzahlungsplan
+                    </h4>
+                    <div id="resultsContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>Strategien
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <h6><i class="fas fa-snowflake text-primary me-2"></i>Schneeball-Methode</h6>
+                    <p class="small text-muted">Zahlen Sie Schulden vom kleinsten zum größten Saldo ab. Bietet psychologische Motivation.</p>
+                </div>
+                
+                <div class="mb-3">
+                    <h6><i class="fas fa-mountain text-success me-2"></i>Lawinen-Methode</h6>
+                    <p class="small text-muted">Zahlen Sie Schulden vom höchsten zum niedrigsten Zinssatz ab. Spart mehr Geld an Zinsen.</p>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    <strong>Tipp:</strong> Wählen Sie die Methode, die Sie motiviert, beim Plan zu bleiben.
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Vorteile
+                </h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled small">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Reduziert die Gesamtzinsen
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Bietet klare Tilgungszeitplan
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Baut Momentum auf
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Verbessert Bonität
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden translated strings for JavaScript -->
+<div id="translations" style="display: none;"
+     data-please-enter-your-monthly-payment-amount="Bitte geben Sie Ihren monatlichen Zahlungsbetrag ein."
+     data-please-add-at-least-one-debt-account="Bitte fügen Sie mindestens ein Schuldenkonto hinzu."
+     data-summary="Zusammenfassung"
+     data-total-debt="Gesamtschulden"
+     data-total-interest="Gesamtzinsen"
+     data-months-to-payoff="Monate bis zur Tilgung"
+     data-total-paid="Gesamtbetrag bezahlt"
+     data-original-balance="Ursprünglicher Saldo"
+     data-interest="Zinsen"
+     data-months="Monate">
+</div>
+
+<script>
+let debtCount = 1;
+
+function addDebtEntry() {
+    debtCount++;
+    const debtEntries = document.getElementById('debtEntries');
+    const newEntry = document.createElement('div');
+    newEntry.className = 'debt-entry mt-3';
+    newEntry.innerHTML = `
+        <div class="row g-3">
+            <div class="col-12 col-md-4">
+                <label class="form-label">Schuldenname</label>
+                <input type="text" class="form-control debt-name" placeholder="Credit Card" required>
+            </div>
+            <div class="col-12 col-md-4">
+                <label class="form-label">Saldo (€)</label>
+                <input type="number" class="form-control debt-balance" placeholder="5000" min="0" step="100" required>
+            </div>
+            <div class="col-12 col-md-4">
+                <label class="form-label">Zinssatz (%)</label>
+                <input type="number" class="form-control debt-rate" placeholder="18" min="0" max="50" step="0.1" required>
+            </div>
+        </div>
+    `;
+    debtEntries.appendChild(newEntry);
+}
+
+function removeDebtEntry() {
+    const debtEntries = document.getElementById('debtEntries');
+    const entries = debtEntries.querySelectorAll('.debt-entry');
+    if (entries.length > 1) {
+        entries[entries.length - 1].remove();
+        debtCount--;
+    }
+}
+
+function calculateSnowball() {
+    const monthlyPayment = parseFloat(document.getElementById('monthlyPayment').value);
+    const strategy = document.getElementById('strategy').value;
+    
+    if (!monthlyPayment) {
+        showMobileError(document.getElementById('translations').dataset.pleaseEnterYourMonthlyPaymentAmount);
+        return;
+    }
+    
+    const debts = [];
+    const debtEntries = document.querySelectorAll('.debt-entry');
+    
+    debtEntries.forEach(entry => {
+        const name = entry.querySelector('.debt-name').value;
+        const balance = parseFloat(entry.querySelector('.debt-balance').value);
+        const rate = parseFloat(entry.querySelector('.debt-rate').value);
+        
+        if (name && balance && rate !== undefined) {
+            debts.push({ name, balance, rate, originalBalance: balance });
+        }
+    });
+    
+    if (debts.length === 0) {
+        showMobileError(document.getElementById('translations').dataset.pleaseAddAtLeastOneDebtAccount);
+        return;
+    }
+    
+    // Sort debts based on strategy
+    if (strategy === 'snowball') {
+        debts.sort((a, b) => a.balance - b.balance);
+    } else {
+        debts.sort((a, b) => b.rate - a.rate);
+    }
+    
+    const results = calculateRepaymentPlan(debts, monthlyPayment);
+    displaySnowballResults(results, strategy);
+}
+
+function calculateRepaymentPlan(debts, monthlyPayment) {
+    const plan = [];
+    let totalInterest = 0;
+    let totalMonths = 0;
+    
+    debts.forEach((debt, index) => {
+        let remainingBalance = debt.balance;
+        let monthlyRate = debt.rate / 100 / 12;
+        let months = 0;
+        let interest = 0;
+        
+        while (remainingBalance > 0.01 && months < 600) { // Max 50 years
+            let payment = monthlyPayment;
+            
+            // For subsequent debts, use freed-up payment from previous debts
+            if (index > 0) {
+                payment += plan[index - 1].monthlyPayment;
+            }
+            
+            let interestPayment = remainingBalance * monthlyRate;
+            let principalPayment = Math.min(payment - interestPayment, remainingBalance);
+            
+            if (principalPayment <= 0) {
+                break; // Can't make progress
+            }
+            
+            remainingBalance -= principalPayment;
+            interest += interestPayment;
+            months++;
+        }
+        
+        plan.push({
+            name: debt.name,
+            originalBalance: debt.originalBalance,
+            monthlyPayment: monthlyPayment,
+            months: months,
+            interest: interest,
+            totalPaid: debt.originalBalance + interest
+        });
+        
+        totalInterest += interest;
+        totalMonths = Math.max(totalMonths, months);
+    });
+    
+    return {
+        plan: plan,
+        totalInterest: totalInterest,
+        totalMonths: totalMonths,
+        totalDebt: debts.reduce((sum, debt) => sum + debt.originalBalance, 0)
+    };
+}
+
+function displaySnowballResults(results, strategy) {
+    const resultsDiv = document.getElementById('results');
+    const resultsContent = document.getElementById('resultsContent');
+    const translations = document.getElementById('translations').dataset;
+    
+    if (!resultsDiv || !resultsContent) return;
+    
+    // Clear previous results
+    resultsContent.innerHTML = '';
+    
+    // Summary card
+    const summaryCard = document.createElement('div');
+    summaryCard.className = 'card mb-4';
+    summaryCard.innerHTML = `
+        <div class="card-header">
+            <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>${translations.summary}</h5>
+        </div>
+        <div class="card-body">
+            <div class="row text-center">
+                <div class="col-6 col-md-3">
+                    <h6 class="text-primary">${formatNumber(results.totalDebt)}</h6>
+                    <small>${translations.totalDebt}</small>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="text-warning">${formatNumber(results.totalInterest)}</h6>
+                    <small>${translations.totalInterest}</small>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="text-info">${results.totalMonths}</h6>
+                    <small>${translations.monthsToPayoff}</small>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h6 class="text-success">${formatNumber(results.totalDebt + results.totalInterest)}</h6>
+                    <small>${translations.totalPaid}</small>
+                </div>
+            </div>
+        </div>
+    `;
+    resultsContent.appendChild(summaryCard);
+    
+    // Individual debt plans
+    results.plan.forEach((debt, index) => {
+        const debtCard = document.createElement('div');
+        debtCard.className = 'card mb-3';
+        debtCard.innerHTML = `
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="fas fa-credit-card me-2"></i>${debt.name}
+                    <span class="badge bg-primary ms-2">${index + 1}</span>
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-6 col-md-3">
+                        <h6 class="text-primary">${formatNumber(debt.originalBalance)}</h6>
+                        <small>${translations.originalBalance}</small>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h6 class="text-warning">${formatNumber(debt.interest)}</h6>
+                        <small>${translations.interest}</small>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h6 class="text-info">${debt.months}</h6>
+                        <small>${translations.months}</small>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h6 class="text-success">${formatNumber(debt.totalPaid)}</h6>
+                        <small>${translations.totalPaid}</small>
+                    </div>
+                </div>
+            </div>
+        `;
+        resultsContent.appendChild(debtCard);
+    });
+    
+    // Show results with animation
+    resultsDiv.style.display = 'block';
+    resultsDiv.classList.add('animate-fade-in-up');
+    
+    // Scroll to results
+    resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetForm() {
+    document.getElementById('debtSnowballForm').reset();
+    document.getElementById('results').style.display = 'none';
+    
+    // Reset to single debt entry
+    const debtEntries = document.getElementById('debtEntries');
+    const entries = debtEntries.querySelectorAll('.debt-entry');
+    for (let i = 1; i < entries.length; i++) {
+        entries[i].remove();
+    }
+    debtCount = 1;
+}
+
+function formatNumber(value) {
+    if (typeof value === 'number') {
+        if (value >= 1000000) {
+            return '€' + (value / 1000000).toFixed(1) + 'M';
+        } else if (value >= 1000) {
+            return '€' + (value / 1000).toFixed(1) + 'K';
+        } else {
+            return '€' + value.toFixed(2);
+        }
+    }
+    return value;
+}
+</script>
+
+    </main>
+
+    <!-- Mobile-First Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container-fluid px-3">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <h6 class="fw-bold">SME-Schuldenmanagement-Tool</h6>
+                    <p class="small mb-2">Umfassende Schuldenmanagement-Lösungen für deutsche KMU</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="/about" class="text-light text-decoration-none small">Über</a>
+                        <a href="#" class="text-light text-decoration-none small">Datenschutzrichtlinie</a>
+                        <a href="#" class="text-light text-decoration-none small">Nutzungsbedingungen</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <p class="small mb-2">
+                        <i class="fas fa-exclamation-triangle me-1" aria-hidden="true"></i>
+                        Dieses Tool dient nur zu Bildungszwecken. Konsultieren Sie Finanzexperten für Beratung.
+                    </p>
+                    <p class="small mb-2">
+                        <i class="fas fa-globe me-1" aria-hidden="true"></i>
+                        Sprache: 
+                        <a href="/set-language/en" class="text-light text-decoration-none ">EN</a> | 
+                        <a href="/set-language/de" class="text-light text-decoration-none fw-bold">DE</a>
+                    </p>
+                    <p class="small mb-0">
+                        <i class="fas fa-code me-1" aria-hidden="true"></i>
+                        Erstellt mit Flask &amp; Bootstrap
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/static/js/main.js"></script>
+    
+    <!-- Analytics (replace with your tracking code) -->
+    
+</body>
+</html>

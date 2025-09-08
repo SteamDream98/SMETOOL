@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <i class="fas fa-calculator me-2"></i>{{ _('Cost of Debt Analysis') }}
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-4">{{ _('Analyze the total cost of borrowing including interest, fees, and opportunity costs.') }}</p>
+                
+                <form id="costAnalysisForm">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="principal" class="form-label">{{ _('Loan Amount') }} (€)</label>
+                            <input type="number" class="form-control" id="principal" name="principal" 
+                                   placeholder="100000" min="0" step="1000" required>
+                            <div class="form-text">{{ _('Total amount borrowed') }}</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="interestRate" class="form-label">{{ _('Annual Interest Rate') }} (%)</label>
+                            <input type="number" class="form-control" id="interestRate" name="interestRate" 
+                                   placeholder="5.5" min="0" max="50" step="0.1" required>
+                            <div class="form-text">{{ _('Annual percentage rate') }}</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="term" class="form-label">{{ _('Loan Term') }} (years)</label>
+                            <input type="number" class="form-control" id="term" name="term" 
+                                   placeholder="5" min="1" max="30" step="1" required>
+                            <div class="form-text">{{ _('Repayment period') }}</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="fees" class="form-label">{{ _('Upfront Fees') }} (€)</label>
+                            <input type="number" class="form-control" id="fees" name="fees" 
+                                   placeholder="2000" min="0" step="100" value="0">
+                            <div class="form-text">{{ _('Processing fees, origination fees, etc.') }}</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="monthlyFees" class="form-label">{{ _('Monthly Fees') }} (€)</label>
+                            <input type="number" class="form-control" id="monthlyFees" name="monthlyFees" 
+                                   placeholder="25" min="0" step="5" value="0">
+                            <div class="form-text">{{ _('Account maintenance fees') }}</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="opportunityCost" class="form-label">{{ _('Opportunity Cost Rate') }} (%)</label>
+                            <input type="number" class="form-control" id="opportunityCost" name="opportunityCost" 
+                                   placeholder="8" min="0" max="20" step="0.5" value="8">
+                            <div class="form-text">{{ _('Alternative investment return rate') }}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
+                            <i class="fas fa-undo me-2"></i>{{ _('Reset') }}
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="calculateCostAnalysis()">
+                            <i class="fas fa-chart-line me-2"></i>{{ _('Analyze') }}
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Results Section -->
+                <div id="results" class="mt-4" style="display: none;">
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="mb-0">
+                            <i class="fas fa-chart-line me-2"></i>{{ _('Analysis Results') }}
+                        </h4>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="exportToPDF()">
+                                <i class="fas fa-file-pdf me-1"></i>{{ _('PDF') }}
+                            </button>
+                            <button type="button" class="btn btn-outline-success btn-sm" onclick="exportToExcel()">
+                                <i class="fas fa-file-excel me-1"></i>{{ _('Excel') }}
+                            </button>
+                        </div>
+                    </div>
+                    <div id="resultsContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>{{ _('Cost Components') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <p class="mb-3">{{ _('The total cost of debt includes several components:') }}</p>
+                
+                <div class="mb-3">
+                    <h6><i class="fas fa-percentage text-primary me-2"></i>{{ _('Interest Costs') }}</h6>
+                    <p class="small text-muted">{{ _('The primary cost of borrowing money') }}</p>
+                </div>
+                
+                <div class="mb-3">
+                    <h6><i class="fas fa-euro-sign text-success me-2"></i>{{ _('Fees') }}</h6>
+                    <p class="small text-muted">{{ _('Upfront and ongoing fees charged by the lender') }}</p>
+                </div>
+                
+                <div class="mb-3">
+                    <h6><i class="fas fa-chart-line text-warning me-2"></i>{{ _('Opportunity Cost') }}</h6>
+                    <p class="small text-muted">{{ _('Potential returns from alternative investments') }}</p>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    <strong>{{ _('Tip:') }}</strong> {{ _('Compare different loan options to find the most cost-effective solution.') }}
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>{{ _('Important Notes') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled small">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Rates may vary based on creditworthiness') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Consider tax implications of interest') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Factor in inflation effects') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Review all loan terms carefully') }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden translations for JavaScript -->
+<div id="translations" style="display: none;"
+     data-please-fill-in-all-required-fields="{{ _('Please fill in all required fields.') }}"
+     data-monthly-payment="{{ _('Monthly Payment') }}"
+     data-total-interest="{{ _('Total Interest') }}"
+     data-total-fees="{{ _('Total Fees') }}"
+     data-opportunity-cost="{{ _('Opportunity Cost') }}"
+     data-total-cost="{{ _('Total Cost') }}"
+     data-effective-rate="{{ _('Effective Rate') }}"
+     data-cost-breakdown="{{ _('Cost Breakdown') }}"
+     data-interest="{{ _('Interest') }}"
+     data-fees="{{ _('Fees') }}"
+     data-opportunity="{{ _('Opportunity') }}">
+</div>
+
+<script>
+function calculateCostAnalysis() {
+    const principal = parseFloat(document.getElementById('principal').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value);
+    const term = parseFloat(document.getElementById('term').value);
+    const fees = parseFloat(document.getElementById('fees').value) || 0;
+    const monthlyFees = parseFloat(document.getElementById('monthlyFees').value) || 0;
+    const opportunityCost = parseFloat(document.getElementById('opportunityCost').value) || 8;
+    
+    if (!principal || !interestRate || !term) {
+        showMobileError(document.getElementById('translations').dataset.pleaseFillInAllRequiredFields);
+        return;
+    }
+    
+    const monthlyRate = interestRate / 100 / 12;
+    const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, term * 12)) / 
+                          (Math.pow(1 + monthlyRate, term * 12) - 1);
+    const totalPayment = monthlyPayment * term * 12;
+    const totalInterest = totalPayment - principal;
+    const totalFees = fees + (monthlyFees * term * 12);
+    const opportunityCostValue = (principal * opportunityCost / 100) * term;
+    const totalCost = totalInterest + totalFees + opportunityCostValue;
+    const effectiveRate = (totalCost / principal / term) * 100;
+    
+    const results = {
+        principal: principal,
+        monthlyPayment: monthlyPayment,
+        totalPayment: totalPayment,
+        totalInterest: totalInterest,
+        totalFees: totalFees,
+        opportunityCost: opportunityCostValue,
+        totalCost: totalCost,
+        effectiveRate: effectiveRate
+    };
+    
+    displayCostAnalysisResults(results);
+}
+
+function displayCostAnalysisResults(results) {
+    const resultsDiv = document.getElementById('results');
+    const resultsContent = document.getElementById('resultsContent');
+    
+    if (!resultsDiv || !resultsContent) return;
+    
+    // Clear previous results
+    resultsContent.innerHTML = '';
+    
+    // Create results cards
+    const translations = document.getElementById('translations').dataset;
+    const cards = [
+        {
+            title: translations.monthlyPayment,
+            value: results.monthlyPayment,
+            icon: 'fas fa-calendar-alt',
+            color: 'primary'
+        },
+        {
+            title: translations.totalInterest,
+            value: results.totalInterest,
+            icon: 'fas fa-percentage',
+            color: 'warning'
+        },
+        {
+            title: translations.totalFees,
+            value: results.totalFees,
+            icon: 'fas fa-euro-sign',
+            color: 'info'
+        },
+        {
+            title: translations.opportunityCost,
+            value: results.opportunityCost,
+            icon: 'fas fa-chart-line',
+            color: 'secondary'
+        },
+        {
+            title: translations.totalCost,
+            value: results.totalCost,
+            icon: 'fas fa-calculator',
+            color: 'danger'
+        },
+        {
+            title: translations.effectiveRate,
+            value: results.effectiveRate.toFixed(2) + '%',
+            icon: 'fas fa-percentage',
+            color: 'success'
+        }
+    ];
+    
+    cards.forEach(card => {
+        const cardElement = document.createElement('div');
+        cardElement.className = 'card mb-3';
+        cardElement.innerHTML = `
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="${card.icon} text-${card.color} fs-4"></i>
+                    </div>
+                    <div>
+                        <h6 class="card-title mb-1">${card.title}</h6>
+                        <p class="card-text h5 text-${card.color} mb-0">${formatNumber(card.value)}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        resultsContent.appendChild(cardElement);
+    });
+    
+    // Add cost breakdown chart
+    const chartDiv = document.createElement('div');
+    chartDiv.className = 'card mt-3';
+    chartDiv.innerHTML = `
+        <div class="card-header">
+            <h6 class="mb-0"><i class="fas fa-chart-pie me-2"></i>${translations.costBreakdown}</h6>
+        </div>
+        <div class="card-body">
+            <div class="row text-center">
+                <div class="col-4">
+                    <div class="progress mb-2" style="height: 20px;">
+                        <div class="progress-bar bg-warning" style="width: ${(results.totalInterest / results.totalCost * 100).toFixed(1)}%"></div>
+                    </div>
+                    <small>${translations.interest}<br>${(results.totalInterest / results.totalCost * 100).toFixed(1)}%</small>
+                </div>
+                <div class="col-4">
+                    <div class="progress mb-2" style="height: 20px;">
+                        <div class="progress-bar bg-info" style="width: ${(results.totalFees / results.totalCost * 100).toFixed(1)}%"></div>
+                    </div>
+                    <small>${translations.fees}<br>${(results.totalFees / results.totalCost * 100).toFixed(1)}%</small>
+                </div>
+                <div class="col-4">
+                    <div class="progress mb-2" style="height: 20px;">
+                        <div class="progress-bar bg-secondary" style="width: ${(results.opportunityCost / results.totalCost * 100).toFixed(1)}%"></div>
+                    </div>
+                    <small>${translations.opportunity}<br>${(results.opportunityCost / results.totalCost * 100).toFixed(1)}%</small>
+                </div>
+            </div>
+        </div>
+    `;
+    resultsContent.appendChild(chartDiv);
+    
+    // Show results with animation
+    resultsDiv.style.display = 'block';
+    resultsDiv.classList.add('animate-fade-in-up');
+    
+    // Scroll to results
+    resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetForm() {
+    document.getElementById('costAnalysisForm').reset();
+    document.getElementById('results').style.display = 'none';
+}
+
+function formatNumber(value) {
+    if (typeof value === 'number') {
+        if (value >= 1000000) {
+            return '€' + (value / 1000000).toFixed(1) + 'M';
+        } else if (value >= 1000) {
+            return '€' + (value / 1000).toFixed(1) + 'K';
+        } else {
+            return '€' + value.toFixed(2);
+        }
+    }
+    return value;
+}
+</script>
+{% endblock %}

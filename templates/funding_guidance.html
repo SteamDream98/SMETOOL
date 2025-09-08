@@ -1,0 +1,402 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <i class="fas fa-euro-sign me-2"></i>{{ _('EU/Federal Funding Guidance') }}
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-4">{{ _('Find available funding programs and grants for German SMEs.') }}</p>
+                
+                <!-- Funding Categories -->
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <h5 class="card-title">{{ _('Innovation & R&D') }}</h5>
+                                <p class="card-text">{{ _('Funding for research, development, and innovation projects') }}</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-primary" onclick="showFundingDetails('innovation')">
+                                        {{ _('View Programs') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h5 class="card-title">{{ _('Green Transition') }}</h5>
+                                <p class="card-text">{{ _('Support for sustainable and environmental initiatives') }}</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-primary" onclick="showFundingDetails('green')">
+                                        {{ _('View Programs') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h5 class="card-title">{{ _('Digitalization') }}</h5>
+                                <p class="card-text">{{ _('Funding for digital transformation and technology adoption') }}</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-primary" onclick="showFundingDetails('digital')">
+                                        {{ _('View Programs') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h5 class="card-title">{{ _('Export & International') }}</h5>
+                                <p class="card-text">{{ _('Support for international expansion and export activities') }}</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-primary" onclick="showFundingDetails('export')">
+                                        {{ _('View Programs') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h5 class="card-title">{{ _('Training & Skills') }}</h5>
+                                <p class="card-text">{{ _('Funding for employee training and skill development') }}</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-primary" onclick="showFundingDetails('training')">
+                                        {{ _('View Programs') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <h5 class="card-title">{{ _('Infrastructure') }}</h5>
+                                <p class="card-text">{{ _('Support for infrastructure development and modernization') }}</p>
+                                <div class="mt-auto">
+                                    <button class="btn btn-primary" onclick="showFundingDetails('infrastructure')">
+                                        {{ _('View Programs') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Funding Details Modal -->
+                <div id="fundingDetails" class="mt-4" style="display: none;">
+                    <hr>
+                    <h4 class="mb-3">
+                        <i class="fas fa-info-circle me-2"></i>{{ _('Funding Programs') }}
+                    </h4>
+                    <div id="fundingContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Key Resources -->
+<div class="row mt-4">
+    <div class="col-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-bookmark me-2"></i>{{ _('Key Resources') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <a href="https://www.bmwk.de" target="_blank" class="text-decoration-none">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            <strong>Federal Ministry for Economic Affairs</strong>
+                        </a>
+                        <p class="small text-muted mb-0">{{ _('Main source for federal funding programs') }}</p>
+                    </li>
+                    <li class="mb-3">
+                        <a href="https://www.kfw.de" target="_blank" class="text-decoration-none">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            <strong>KfW Development Bank</strong>
+                        </a>
+                        <p class="small text-muted mb-0">{{ _('Low-interest loans and guarantees') }}</p>
+                    </li>
+                    <li class="mb-3">
+                        <a href="https://www.bafa.de" target="_blank" class="text-decoration-none">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            <strong>BAFA Federal Office</strong>
+                        </a>
+                        <p class="small text-muted mb-0">{{ _('Grants and subsidies for various sectors') }}</p>
+                    </li>
+                    <li class="mb-3">
+                        <a href="https://www.ptj.de" target="_blank" class="text-decoration-none">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            <strong>Project Management Jülich</strong>
+                        </a>
+                        <p class="small text-muted mb-0">{{ _('Research and innovation funding') }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-lightbulb me-2"></i>{{ _('Application Tips') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled small">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Start early - applications can take months') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Read guidelines carefully') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Prepare detailed project descriptions') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Include realistic budgets and timelines') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Seek professional advice if needed') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Keep detailed records of all correspondence') }}
+                    </li>
+                </ul>
+                
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>{{ _('Note:') }}</strong> {{ _('Funding availability and criteria may change. Always check official sources for current information.') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Translation strings for JavaScript
+const translations = {
+    amount: '{{ _("Amount:") }}',
+    deadline: '{{ _("Deadline:") }}',
+    learnMore: '{{ _("Learn More") }}',
+    continuous: '{{ _("Continuous") }}',
+    variesByRegion: '{{ _("Varies by region") }}',
+    supportRnD: '{{ _("Support for R&D projects in SMEs") }}',
+    innovationFunding: '{{ _("Innovation funding for SMEs") }}',
+    energyBuildings: '{{ _("Support for energy-efficient buildings") }}',
+    energyLoans: '{{ _("Low-interest loans for energy efficiency") }}',
+    digitalSupport: '{{ _("Digital transformation support") }}',
+    digitalConsulting: '{{ _("Digitalization consulting and implementation") }}',
+    exportFinancing: '{{ _("Export financing and guarantees") }}',
+    marketEntry: '{{ _("Support for international market entry") }}',
+    trainingOlder: '{{ _("Training for older employees") }}',
+    vocationalTraining: '{{ _("Vocational training support") }}',
+    regionalFunding: '{{ _("Regional development funding") }}',
+    infrastructureLoans: '{{ _("Infrastructure development loans") }}',
+    upTo350k: '{{ _("Up to €350,000") }}',
+    upTo2M: '{{ _("Up to €2M") }}',
+    upTo75k: '{{ _("Up to €75,000") }}',
+    upTo25M: '{{ _("Up to €25M") }}',
+    upTo17k: '{{ _("Up to €17,000") }}',
+    upTo16500: '{{ _("Up to €16,500") }}',
+    upTo5M: '{{ _("Up to €5M") }}',
+    upTo50k: '{{ _("Up to €50,000") }}',
+    upTo2k: '{{ _("Up to €2,000") }}',
+    upTo3k: '{{ _("Up to €3,000") }}',
+    upTo1M: '{{ _("Up to €1M") }}',
+    upTo10M: '{{ _("Up to €10M") }}'
+};
+
+const fundingPrograms = {
+    innovation: [
+        {
+            name: 'ZIM - Central Innovation Programme',
+            description: translations.supportRnD,
+            amount: translations.upTo350k,
+            deadline: translations.continuous,
+            link: 'https://www.zim.de'
+        },
+        {
+            name: 'KMU-innovativ',
+            description: translations.innovationFunding,
+            amount: translations.upTo2M,
+            deadline: translations.continuous,
+            link: 'https://www.kmu-innovativ.de'
+        }
+    ],
+    green: [
+        {
+            name: 'BEG - Federal Funding for Efficient Buildings',
+            description: translations.energyBuildings,
+            amount: translations.upTo75k,
+            deadline: translations.continuous,
+            link: 'https://www.bafa.de'
+        },
+        {
+            name: 'KfW Energy Efficiency Programme',
+            description: translations.energyLoans,
+            amount: translations.upTo25M,
+            deadline: translations.continuous,
+            link: 'https://www.kfw.de'
+        }
+    ],
+    digital: [
+        {
+            name: 'Digital Jetzt',
+            description: translations.digitalSupport,
+            amount: translations.upTo17k,
+            deadline: translations.continuous,
+            link: 'https://www.digital-jetzt.de'
+        },
+        {
+            name: 'go-digital',
+            description: translations.digitalConsulting,
+            amount: translations.upTo16500,
+            deadline: translations.continuous,
+            link: 'https://www.go-digital.de'
+        }
+    ],
+    export: [
+        {
+            name: 'ERP Export Financing',
+            description: translations.exportFinancing,
+            amount: translations.upTo5M,
+            deadline: translations.continuous,
+            link: 'https://www.kfw.de'
+        },
+        {
+            name: 'Market Entry Programme',
+            description: translations.marketEntry,
+            amount: translations.upTo50k,
+            deadline: translations.continuous,
+            link: 'https://www.bmwk.de'
+        }
+    ],
+    training: [
+        {
+            name: 'WeGebAU',
+            description: translations.trainingOlder,
+            amount: translations.upTo2k,
+            deadline: translations.continuous,
+            link: 'https://www.arbeitsagentur.de'
+        },
+        {
+            name: 'AVGS - Active Job Market Policy',
+            description: translations.vocationalTraining,
+            amount: translations.upTo3k,
+            deadline: translations.continuous,
+            link: 'https://www.arbeitsagentur.de'
+        }
+    ],
+    infrastructure: [
+        {
+            name: 'GRW - Joint Task for Regional Development',
+            description: translations.regionalFunding,
+            amount: translations.upTo1M,
+            deadline: translations.variesByRegion,
+            link: 'https://www.bmwk.de'
+        },
+        {
+            name: 'KfW Infrastructure Programme',
+            description: translations.infrastructureLoans,
+            amount: translations.upTo10M,
+            deadline: translations.continuous,
+            link: 'https://www.kfw.de'
+        }
+    ]
+};
+
+function showFundingDetails(category) {
+    const detailsDiv = document.getElementById('fundingDetails');
+    const contentDiv = document.getElementById('fundingContent');
+    
+    if (!detailsDiv || !contentDiv) return;
+    
+    const programs = fundingPrograms[category];
+    if (!programs) return;
+    
+    // Clear previous content
+    contentDiv.innerHTML = '';
+    
+    // Create program cards
+    programs.forEach(program => {
+        const programCard = document.createElement('div');
+        programCard.className = 'card mb-3';
+        programCard.innerHTML = `
+            <div class="card-body">
+                <h5 class="card-title">${program.name}</h5>
+                <p class="card-text">${program.description}</p>
+                <div class="row">
+                    <div class="col-6 col-md-3">
+                        <strong>${translations.amount}</strong><br>
+                        <span class="text-primary">${program.amount}</span>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <strong>${translations.deadline}</strong><br>
+                        <span class="text-info">${program.deadline}</span>
+                    </div>
+                    <div class="col-12 col-md-6 text-md-end">
+                        <a href="${program.link}" target="_blank" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-external-link-alt me-2"></i>${translations.learnMore}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        contentDiv.appendChild(programCard);
+    });
+    
+    // Show details with animation
+    detailsDiv.style.display = 'block';
+    detailsDiv.classList.add('animate-fade-in-up');
+    
+    // Scroll to details
+    detailsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+{% endblock %}

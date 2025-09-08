@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Comprehensive debt management solutions for German SMEs. Calculate debt limits, analyze costs, prioritize repayments, and find funding opportunities.">
+    <meta name="keywords" content="SME debt management, German debt brake, cost analysis, debt snowball, funding guidance, covenant tracking, small business finance">
+    <meta name="author" content="SME Debt Management Tool">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SME Debt Tool">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0d6efd">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SME Debt Management Tool - Germany">
+    <meta property="og:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/">
+    <meta property="og:image" content="/static/og-image.png">
+    <meta property="og:site_name" content="SME Debt Management Tool">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SME Debt Management Tool - Germany">
+    <meta name="twitter:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta name="twitter:image" content="/static/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/static/manifest.json">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
+    <link href="/static/css/style.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SME Debt Management Tool",
+        "description": "Comprehensive debt management solutions for German SMEs",
+        "url": "http://localhost/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "SME Debt Management Tool"
+        }
+    }
+    </script>
+    
+    <title>SME-Schuldenmanagement-Tool - Deutschland</title>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    
+    <!-- Mobile-First Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/" aria-label="SME-Schuldenmanagement-Tool Startseite">
+                <i class="fas fa-chart-line me-2" aria-hidden="true"></i>
+                <span class="d-none d-sm-inline">SME-Schulden-Tool</span>
+                <span class="d-sm-none">SME</span>
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Main navigation -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-brake">
+                            <i class="fas fa-shield-alt me-1" aria-hidden="true"></i>Schuldenbremse
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/cost-analysis">
+                            <i class="fas fa-calculator me-1" aria-hidden="true"></i>Kostenanalyse
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-equity">
+                            <i class="fas fa-exchange-alt me-1" aria-hidden="true"></i>Schulden-Eigenkapital-Tausch
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-snowball">
+                            <i class="fas fa-snowflake me-1" aria-hidden="true"></i>Schulden-Schneeball
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/funding-guidance">
+                            <i class="fas fa-euro-sign me-1" aria-hidden="true"></i>Finanzierung
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/covenant-tracking">
+                            <i class="fas fa-clipboard-check me-1" aria-hidden="true"></i>Covenants
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Right side navigation -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about">
+                            <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Über</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/donation">
+                            <i class="fas fa-heart me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Unterstützung</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/set-language/de" title="Zu Deutsch wechseln">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">DE</span>
+                            <span class="d-md-none">DE</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content with top padding for fixed navbar -->
+    <main id="main-content" class="container-fluid px-3 py-4" style="margin-top: 76px;">
+        
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <i class="fas fa-shield-alt me-2"></i>Schuldenbremse-Rechner
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-4">Berechnen Sie das maximale nachhaltige Schuldenniveau für Ihr KMU basierend auf Einkommen und Ausgaben.</p>
+                
+                <form id="debtBrakeForm">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="revenue" class="form-label">Jahresumsatz (€)</label>
+                            <input type="number" class="form-control" id="revenue" name="revenue" 
+                                   placeholder="500000" min="0" step="1000" required>
+                            <div class="form-text">Ihr gesamter Jahresumsatz</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="expenses" class="form-label">Jahresausgaben (€)</label>
+                            <input type="number" class="form-control" id="expenses" name="expenses" 
+                                   placeholder="400000" min="0" step="1000" required>
+                            <div class="form-text">Ihre gesamten Jahresausgaben</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="existingDebt" class="form-label">Bestehende Schulden (€)</label>
+                            <input type="number" class="form-control" id="existingDebt" name="existingDebt" 
+                                   placeholder="100000" min="0" step="1000" required>
+                            <div class="form-text">Aktuelle ausstehende Schulden</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="debtServiceRatio" class="form-label">Maximales Schuldendienstverhältnis (%)</label>
+                            <select class="form-select" id="debtServiceRatio" name="debtServiceRatio">
+                                <option value="0.25">25%</option>
+                                <option value="0.30" selected>30%</option>
+                                <option value="0.35">35%</option>
+                                <option value="0.40">40%</option>
+                            </select>
+                            <div class="form-text">Maximaler Prozentsatz des Nettoeinkommens für Schuldendienst</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
+                            <i class="fas fa-undo me-2"></i>Zurücksetzen
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="calculateDebtBrake()">
+                            <i class="fas fa-calculator me-2"></i>Berechnen
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Results Section -->
+                <div id="results" class="mt-4" style="display: none;">
+                    <hr>
+                    <h4 class="mb-3">
+                        <i class="fas fa-chart-line me-2"></i>Ergebnisse
+                    </h4>
+                    <div id="resultsContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>Wie es funktioniert
+                </h4>
+            </div>
+            <div class="card-body">
+                <p class="mb-3">Der Schuldenbremse-Rechner hilft Ihnen, das maximale nachhaltige Schuldenniveau für Ihr Unternehmen zu bestimmen.</p>
+                
+                <h6>Berechnungsmethode:</h6>
+                <ol class="small">
+                    <li class="mb-2">Nettoeinkommen berechnen (Umsatz - Ausgaben)</li>
+                    <li class="mb-2">Maximalen Schuldendienst bestimmen (Nettoeinkommen × Verhältnis)</li>
+                    <li class="mb-2">Maximale neue Schuldenkapazität berechnen</li>
+                    <li class="mb-2">Aktuelles Schulden-zu-Einkommen-Verhältnis bewerten</li>
+                </ol>
+                
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    <strong>Tipp:</strong> Ein Schuldendienstverhältnis von 30% wird für die meisten Unternehmen als sicher angesehen.
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Wichtige Hinweise
+                </h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled small">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Dies ist eine vereinfachte Berechnung
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Berücksichtigen Sie saisonale Einkommensschwankungen
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Berücksichtigen Sie Notfallreserven
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Konsultieren Sie Finanzberater
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden translations for JavaScript -->
+<div id="translations" style="display: none;"
+     data-please-fill-in-all-required-fields="Bitte füllen Sie alle erforderlichen Felder aus."
+     data-net-income="Nettogewinn"
+     data-max-monthly-debt-service="Maximaler monatlicher Schuldendienst"
+     data-max-new-debt-capacity="Maximale neue Schuldenkapazität"
+     data-current-debt-to-income-ratio="Aktuelles Schulden-zu-Einkommen-Verhältnis"
+     data-sustainable="Nachhaltig"
+     data-warning="Warnung"
+     data-sustainable-limits="Ihr aktueller Schuldenstand liegt innerhalb nachhaltiger Grenzen."
+     data-exceeds-limits="Ihr aktueller Schuldenstand überschreitet die empfohlenen Grenzen. Erwägen Sie, Schulden zu reduzieren oder Einkommen zu erhöhen.">
+</div>
+
+<script>
+function calculateDebtBrake() {
+    const revenue = parseFloat(document.getElementById('revenue').value);
+    const expenses = parseFloat(document.getElementById('expenses').value);
+    const existingDebt = parseFloat(document.getElementById('existingDebt').value);
+    const debtServiceRatio = parseFloat(document.getElementById('debtServiceRatio').value);
+    
+    if (!revenue || !expenses || existingDebt === undefined) {
+        showMobileError(document.getElementById('translations').dataset.pleaseFillInAllRequiredFields);
+        return;
+    }
+    
+    const netIncome = revenue - expenses;
+    const maxDebtService = netIncome * debtServiceRatio;
+    const maxNewDebt = (maxDebtService * 12) - existingDebt;
+    const debtToIncomeRatio = existingDebt / netIncome;
+    const isSustainable = debtToIncomeRatio <= debtServiceRatio;
+    
+    const results = {
+        netIncome: netIncome,
+        maxDebtService: maxDebtService,
+        maxNewDebt: Math.max(0, maxNewDebt),
+        debtToIncomeRatio: debtToIncomeRatio,
+        isSustainable: isSustainable
+    };
+    
+    displayDebtBrakeResults(results);
+}
+
+function displayDebtBrakeResults(results) {
+    const resultsDiv = document.getElementById('results');
+    const resultsContent = document.getElementById('resultsContent');
+    
+    if (!resultsDiv || !resultsContent) return;
+    
+    // Clear previous results
+    resultsContent.innerHTML = '';
+    
+    // Create results cards
+    const translations = document.getElementById('translations').dataset;
+    const cards = [
+        {
+            title: translations.netIncome,
+            value: results.netIncome,
+            icon: 'fas fa-euro-sign',
+            color: 'success'
+        },
+        {
+            title: translations.maxMonthlyDebtService,
+            value: results.maxDebtService,
+            icon: 'fas fa-calculator',
+            color: 'primary'
+        },
+        {
+            title: translations.maxNewDebtCapacity,
+            value: results.maxNewDebt,
+            icon: 'fas fa-plus-circle',
+            color: 'info'
+        },
+        {
+            title: translations.currentDebtToIncomeRatio,
+            value: (results.debtToIncomeRatio * 100).toFixed(1) + '%',
+            icon: 'fas fa-percentage',
+            color: results.isSustainable ? 'success' : 'warning'
+        }
+    ];
+    
+    cards.forEach(card => {
+        const cardElement = document.createElement('div');
+        cardElement.className = 'card mb-3';
+        cardElement.innerHTML = `
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="${card.icon} text-${card.color} fs-4"></i>
+                    </div>
+                    <div>
+                        <h6 class="card-title mb-1">${card.title}</h6>
+                        <p class="card-text h5 text-${card.color} mb-0">${formatNumber(card.value)}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        resultsContent.appendChild(cardElement);
+    });
+    
+    // Add sustainability assessment
+    const assessmentDiv = document.createElement('div');
+    assessmentDiv.className = `alert alert-${results.isSustainable ? 'success' : 'warning'}`;
+    assessmentDiv.innerHTML = `
+        <i class="fas fa-${results.isSustainable ? 'check-circle' : 'exclamation-triangle'} me-2"></i>
+        <strong>${results.isSustainable ? translations.sustainable : translations.warning}:</strong>
+        ${results.isSustainable ? 
+            translations.sustainableLimits : 
+            translations.exceedsLimits
+        }
+    `;
+    resultsContent.appendChild(assessmentDiv);
+    
+    // Show results with animation
+    resultsDiv.style.display = 'block';
+    resultsDiv.classList.add('animate-fade-in-up');
+    
+    // Scroll to results
+    resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetForm() {
+    document.getElementById('debtBrakeForm').reset();
+    document.getElementById('results').style.display = 'none';
+}
+
+function formatNumber(value) {
+    if (typeof value === 'number') {
+        if (value >= 1000000) {
+            return '€' + (value / 1000000).toFixed(1) + 'M';
+        } else if (value >= 1000) {
+            return '€' + (value / 1000).toFixed(1) + 'K';
+        } else {
+            return '€' + value.toFixed(2);
+        }
+    }
+    return value;
+}
+</script>
+
+    </main>
+
+    <!-- Mobile-First Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container-fluid px-3">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <h6 class="fw-bold">SME-Schuldenmanagement-Tool</h6>
+                    <p class="small mb-2">Umfassende Schuldenmanagement-Lösungen für deutsche KMU</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="/about" class="text-light text-decoration-none small">Über</a>
+                        <a href="#" class="text-light text-decoration-none small">Datenschutzrichtlinie</a>
+                        <a href="#" class="text-light text-decoration-none small">Nutzungsbedingungen</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <p class="small mb-2">
+                        <i class="fas fa-exclamation-triangle me-1" aria-hidden="true"></i>
+                        Dieses Tool dient nur zu Bildungszwecken. Konsultieren Sie Finanzexperten für Beratung.
+                    </p>
+                    <p class="small mb-2">
+                        <i class="fas fa-globe me-1" aria-hidden="true"></i>
+                        Sprache: 
+                        <a href="/set-language/en" class="text-light text-decoration-none ">EN</a> | 
+                        <a href="/set-language/de" class="text-light text-decoration-none fw-bold">DE</a>
+                    </p>
+                    <p class="small mb-0">
+                        <i class="fas fa-code me-1" aria-hidden="true"></i>
+                        Erstellt mit Flask &amp; Bootstrap
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/static/js/main.js"></script>
+    
+    <!-- Analytics (replace with your tracking code) -->
+    
+</body>
+</html>

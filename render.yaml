@@ -1,0 +1,13 @@
+# Render.com Deployment Configuration
+# This file tells Render how to deploy your Docker application
+
+# Build Command (Render will run this to build your app)
+docker build -f Dockerfile.prod -t smetool .
+
+# Start Command (Render will run this to start your app)
+gunicorn --bind 0.0.0.0:$PORT --workers 4 --timeout 120 app:app
+
+# Environment Variables (set these in Render dashboard)
+# FLASK_ENV=production
+# SECRET_KEY=your-production-secret-key
+# PORT=10000 (Render sets this automatically)

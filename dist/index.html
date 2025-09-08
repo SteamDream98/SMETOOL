@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Comprehensive debt management solutions for German SMEs. Calculate debt limits, analyze costs, prioritize repayments, and find funding opportunities.">
+    <meta name="keywords" content="SME debt management, German debt brake, cost analysis, debt snowball, funding guidance, covenant tracking, small business finance">
+    <meta name="author" content="SME Debt Management Tool">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SME Debt Tool">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0d6efd">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SME Debt Management Tool - Germany">
+    <meta property="og:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/">
+    <meta property="og:image" content="/static/og-image.png">
+    <meta property="og:site_name" content="SME Debt Management Tool">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SME Debt Management Tool - Germany">
+    <meta name="twitter:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta name="twitter:image" content="/static/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/static/manifest.json">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
+    <link href="/static/css/style.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SME Debt Management Tool",
+        "description": "Comprehensive debt management solutions for German SMEs",
+        "url": "http://localhost/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "SME Debt Management Tool"
+        }
+    }
+    </script>
+    
+    <title>SME-Schuldenmanagement-Tool - Deutschland</title>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    
+    <!-- Mobile-First Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/" aria-label="SME-Schuldenmanagement-Tool Startseite">
+                <i class="fas fa-chart-line me-2" aria-hidden="true"></i>
+                <span class="d-none d-sm-inline">SME-Schulden-Tool</span>
+                <span class="d-sm-none">SME</span>
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Main navigation -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-brake">
+                            <i class="fas fa-shield-alt me-1" aria-hidden="true"></i>Schuldenbremse
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/cost-analysis">
+                            <i class="fas fa-calculator me-1" aria-hidden="true"></i>Kostenanalyse
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-equity">
+                            <i class="fas fa-exchange-alt me-1" aria-hidden="true"></i>Schulden-Eigenkapital-Tausch
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-snowball">
+                            <i class="fas fa-snowflake me-1" aria-hidden="true"></i>Schulden-Schneeball
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/funding-guidance">
+                            <i class="fas fa-euro-sign me-1" aria-hidden="true"></i>Finanzierung
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/covenant-tracking">
+                            <i class="fas fa-clipboard-check me-1" aria-hidden="true"></i>Covenants
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Right side navigation -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about">
+                            <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Über</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/donation">
+                            <i class="fas fa-heart me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Unterstützung</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/set-language/de" title="Zu Deutsch wechseln">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">DE</span>
+                            <span class="d-md-none">DE</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content with top padding for fixed navbar -->
+    <main id="main-content" class="container-fluid px-3 py-4" style="margin-top: 76px;">
+        
+<!-- Mobile-First Hero Section -->
+<div class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">SME-Schuldenmanagement-Tool</h1>
+        <p class="lead mb-4">Innovation durch die Menschen Deutschlands vorantreiben mit Wertschätzung für die Schönheit von Volkach</p>
+        <p class="mb-4">Berechnen Sie Schuldengrenzen, analysieren Sie Kosten, priorisieren Sie Rückzahlungen und finden Sie Finanzierungsmöglichkeiten</p>
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <a href="/debt-brake" class="btn btn-light btn-lg">
+                <i class="fas fa-shield-alt me-2"></i>Loslegen
+            </a>
+            <a href="/about" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-info-circle me-2"></i>Mehr erfahren
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile-First Features Grid -->
+<div class="row g-4 mb-5">
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h5 class="card-title">Schuldenbremse-Rechner</h5>
+                <p class="card-text flex-grow-1">Berechnen Sie maximale nachhaltige Schuldenniveaus</p>
+                <a href="/debt-brake" class="btn btn-primary">
+                    <i class="fas fa-calculator me-2"></i>Berechnen
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h5 class="card-title">Schuldenkosten-Analyse</h5>
+                <p class="card-text flex-grow-1">Analysieren Sie die Gesamtkosten der Kreditaufnahme</p>
+                <a href="/cost-analysis" class="btn btn-primary">
+                    <i class="fas fa-chart-line me-2"></i>Analysieren
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h5 class="card-title">Schulden-Eigenkapital-Tausch-Simulation</h5>
+                <p class="card-text flex-grow-1">Simulieren Sie Schuldenrestrukturierungsszenarien</p>
+                <a href="/debt-equity" class="btn btn-primary">
+                    <i class="fas fa-exchange-alt me-2"></i>Simulieren
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <h5 class="card-title">Schulden-Schneeball-Priorisierung</h5>
+                <p class="card-text flex-grow-1">Optimieren Sie die Schuldenrückzahlungsstrategie</p>
+                <a href="/debt-snowball" class="btn btn-primary">
+                    <i class="fas fa-snowflake me-2"></i>Optimieren
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-euro-sign"></i>
+                </div>
+                <h5 class="card-title">EU/Bundesfinanzierungsberatung</h5>
+                <p class="card-text flex-grow-1">Finden Sie verfügbare Finanzierungsprogramme</p>
+                <a href="/funding-guidance" class="btn btn-primary">
+                    <i class="fas fa-euro-sign me-2"></i>Finanzierung finden
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h5 class="card-title">Schulden-Covenant-Verfolgung</h5>
+                <p class="card-text flex-grow-1">Überwachen Sie die Einhaltung von Schuldenvereinbarungen</p>
+                <a href="/covenant-tracking" class="btn btn-primary">
+                    <i class="fas fa-clipboard-check me-2"></i>Verfolgen
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile-First Information Section -->
+<div class="row g-4">
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>Über dieses Tool
+                </h4>
+            </div>
+            <div class="card-body">
+                <p class="mb-3">Dieses umfassende Schuldenmanagement-Tool wurde speziell für deutsche KMU entwickelt, um ihnen bei fundierten Finanzentscheidungen zu helfen.</p>
+                <p class="mb-3">Unsere Tools helfen Ihnen:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Berechnen Sie nachhaltige Schuldenniveaus basierend auf Ihrem Einkommen
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Analysieren Sie die wahren Kosten der Kreditaufnahme
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Optimieren Sie Ihre Schuldenrückzahlungsstrategie
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Finden Sie verfügbare Finanzierungsmöglichkeiten
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Überwachen Sie die Einhaltung von Schuldenvereinbarungen
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Wichtiger Hinweis
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-warning mb-0">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Dieses Tool dient nur zu Bildungszwecken. Konsultieren Sie Finanzexperten für Beratung.
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-heart me-2"></i>Entwicklung unterstützen
+                </h4>
+            </div>
+            <div class="card-body text-center">
+                <p class="mb-3">Helfen Sie uns, weiterhin Tools für Deutschland zu bauen</p>
+                <a href="/donation" class="btn btn-success">
+                    <i class="fas fa-heart me-2"></i>Unterstützung
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Mobile-First Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container-fluid px-3">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <h6 class="fw-bold">SME-Schuldenmanagement-Tool</h6>
+                    <p class="small mb-2">Umfassende Schuldenmanagement-Lösungen für deutsche KMU</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="/about" class="text-light text-decoration-none small">Über</a>
+                        <a href="#" class="text-light text-decoration-none small">Datenschutzrichtlinie</a>
+                        <a href="#" class="text-light text-decoration-none small">Nutzungsbedingungen</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <p class="small mb-2">
+                        <i class="fas fa-exclamation-triangle me-1" aria-hidden="true"></i>
+                        Dieses Tool dient nur zu Bildungszwecken. Konsultieren Sie Finanzexperten für Beratung.
+                    </p>
+                    <p class="small mb-2">
+                        <i class="fas fa-globe me-1" aria-hidden="true"></i>
+                        Sprache: 
+                        <a href="/set-language/en" class="text-light text-decoration-none ">EN</a> | 
+                        <a href="/set-language/de" class="text-light text-decoration-none fw-bold">DE</a>
+                    </p>
+                    <p class="small mb-0">
+                        <i class="fas fa-code me-1" aria-hidden="true"></i>
+                        Erstellt mit Flask &amp; Bootstrap
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/static/js/main.js"></script>
+    
+    <!-- Analytics (replace with your tracking code) -->
+    
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Comprehensive debt management solutions for German SMEs. Calculate debt limits, analyze costs, prioritize repayments, and find funding opportunities.">
+    <meta name="keywords" content="SME debt management, German debt brake, cost analysis, debt snowball, funding guidance, covenant tracking, small business finance">
+    <meta name="author" content="SME Debt Management Tool">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SME Debt Tool">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0d6efd">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SME Debt Management Tool - Germany">
+    <meta property="og:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/">
+    <meta property="og:image" content="/static/og-image.png">
+    <meta property="og:site_name" content="SME Debt Management Tool">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SME Debt Management Tool - Germany">
+    <meta name="twitter:description" content="Comprehensive debt management solutions for German SMEs">
+    <meta name="twitter:image" content="/static/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/static/manifest.json">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
+    <link href="/static/css/style.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SME Debt Management Tool",
+        "description": "Comprehensive debt management solutions for German SMEs",
+        "url": "http://localhost/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "SME Debt Management Tool"
+        }
+    }
+    </script>
+    
+    <title>SME-Schuldenmanagement-Tool - Deutschland</title>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    
+    <!-- Mobile-First Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/" aria-label="SME-Schuldenmanagement-Tool Startseite">
+                <i class="fas fa-chart-line me-2" aria-hidden="true"></i>
+                <span class="d-none d-sm-inline">SME-Schulden-Tool</span>
+                <span class="d-sm-none">SME</span>
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Main navigation -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-brake">
+                            <i class="fas fa-shield-alt me-1" aria-hidden="true"></i>Schuldenbremse
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/cost-analysis">
+                            <i class="fas fa-calculator me-1" aria-hidden="true"></i>Kostenanalyse
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-equity">
+                            <i class="fas fa-exchange-alt me-1" aria-hidden="true"></i>Schulden-Eigenkapital-Tausch
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/debt-snowball">
+                            <i class="fas fa-snowflake me-1" aria-hidden="true"></i>Schulden-Schneeball
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/funding-guidance">
+                            <i class="fas fa-euro-sign me-1" aria-hidden="true"></i>Finanzierung
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/covenant-tracking">
+                            <i class="fas fa-clipboard-check me-1" aria-hidden="true"></i>Covenants
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Right side navigation -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about">
+                            <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Über</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/donation">
+                            <i class="fas fa-heart me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Unterstützung</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/set-language/de" title="Zu Deutsch wechseln">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">DE</span>
+                            <span class="d-md-none">DE</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content with top padding for fixed navbar -->
+    <main id="main-content" class="container-fluid px-3 py-4" style="margin-top: 76px;">
+        
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <i class="fas fa-clipboard-check me-2"></i>Schulden-Covenant-Verfolgung
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-4">Überwachen Sie die Einhaltung von Schuldenvertragsklauseln und -anforderungen.</p>
+                
+                <form id="covenantForm">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="companyName" class="form-label">Firmenname</label>
+                            <input type="text" class="form-control" id="companyName" name="companyName" 
+                                   placeholder="Ihre Firma GmbH" required>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="reportingDate" class="form-label">Berichtsdatum</label>
+                            <input type="date" class="form-control" id="reportingDate" name="reportingDate" 
+                                   value="" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Financial Metrics -->
+                    <h5 class="mt-4 mb-3">Finanzkennzahlen</h5>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="totalDebt" class="form-label">Gesamtschulden (€)</label>
+                            <input type="number" class="form-control" id="totalDebt" name="totalDebt" 
+                                   placeholder="500000" min="0" step="1000" required>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="ebitda" class="form-label">EBITDA (€)</label>
+                            <input type="number" class="form-control" id="ebitda" name="ebitda" 
+                                   placeholder="100000" min="0" step="1000" required>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="totalAssets" class="form-label">Gesamtvermögen (€)</label>
+                            <input type="number" class="form-control" id="totalAssets" name="totalAssets" 
+                                   placeholder="1000000" min="0" step="1000" required>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="cashFlow" class="form-label">Operating Cash Flow (€)</label>
+                            <input type="number" class="form-control" id="cashFlow" name="cashFlow" 
+                                   placeholder="80000" min="0" step="1000" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Covenant Requirements -->
+                    <h5 class="mt-4 mb-3">Covenant-Anforderungen</h5>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="maxDebtToEbitda" class="form-label">Max. Schulden-zu-EBITDA-Verhältnis</label>
+                            <input type="number" class="form-control" id="maxDebtToEbitda" name="maxDebtToEbitda" 
+                                   placeholder="3.5" min="0" max="10" step="0.1" value="3.5">
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="minInterestCoverage" class="form-label">Min. Zinsdeckungsgrad</label>
+                            <input type="number" class="form-control" id="minInterestCoverage" name="minInterestCoverage" 
+                                   placeholder="2.5" min="0" max="10" step="0.1" value="2.5">
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="maxDebtToAssets" class="form-label">Max. Schulden-zu-Vermögen-Verhältnis</label>
+                            <input type="number" class="form-control" id="maxDebtToAssets" name="maxDebtToAssets" 
+                                   placeholder="0.6" min="0" max="1" step="0.05" value="0.6">
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="minCashFlowCoverage" class="form-label">Min. Cashflow-Deckung</label>
+                            <input type="number" class="form-control" id="minCashFlowCoverage" name="minCashFlowCoverage" 
+                                   placeholder="1.2" min="0" max="5" step="0.1" value="1.2">
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
+                            <i class="fas fa-undo me-2"></i>Zurücksetzen
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="calculateCovenants()">
+                            <i class="fas fa-clipboard-check me-2"></i>Compliance prüfen
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Results Section -->
+                <div id="results" class="mt-4" style="display: none;">
+                    <hr>
+                    <h4 class="mb-3">
+                        <i class="fas fa-chart-line me-2"></i>Compliance-Bericht
+                    </h4>
+                    <div id="resultsContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>Häufige Covenants
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <h6><i class="fas fa-percentage text-primary me-2"></i>Schulden-zu-EBITDA-Verhältnis</h6>
+                    <p class="small text-muted">Misst Schulden im Verhältnis zu Erträgen vor Zinsen, Steuern, Abschreibungen und Amortisation</p>
+                </div>
+                
+                <div class="mb-3">
+                    <h6><i class="fas fa-shield-alt text-success me-2"></i>Zinsdeckungsgrad</h6>
+                    <p class="small text-muted">Misst die Fähigkeit, Zinsaufwendungen aus dem Betriebsertrag zu zahlen</p>
+                </div>
+                
+                <div class="mb-3">
+                    <h6><i class="fas fa-balance-scale text-warning me-2"></i>Schulden-zu-Vermögen-Verhältnis</h6>
+                    <p class="small text-muted">Misst den Prozentsatz der durch Schulden finanzierten Vermögenswerte</p>
+                </div>
+                
+                <div class="mb-3">
+                    <h6><i class="fas fa-euro-sign text-info me-2"></i>Cashflow-Deckung</h6>
+                    <p class="small text-muted">Misst die Fähigkeit, Schulden aus dem operativen Cashflow zu bedienen</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Compliance-Tipps
+                </h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled small">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Verhältnisse regelmäßig überwachen
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Ausreichende Liquiditätsreserven aufrechterhalten
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Für saisonale Schwankungen planen
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Frühzeitig mit Kreditgebern kommunizieren
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        Bei Bedarf Covenant-Änderungen in Betracht ziehen
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Translation strings for JavaScript
+const translations = {
+    pleaseFillMetrics: 'Bitte füllen Sie alle erforderlichen Finanzkennzahlen aus.',
+    allCompliant: 'Alle Covenants eingehalten',
+    violationsDetected: 'Covenant-Verstöße erkannt',
+    companyCompliant: 'Ihr Unternehmen hält alle Schulden-Covenants ein.',
+    someNotMet: 'Einige Covenants werden nicht eingehalten. Überprüfen Sie die Details unten.',
+    debtToEbitda: 'Schulden-zu-EBITDA-Verhältnis',
+    interestCoverage: 'Zinsdeckungsgrad',
+    debtToAssets: 'Schulden-zu-Vermögen-Verhältnis',
+    cashFlowCoverage: 'Cashflow-Deckung',
+    compliant: 'Eingehalten',
+    violation: 'Verstoß',
+    current: 'Aktuell:',
+    limit: 'Grenzwert:',
+    actionRequired: 'Maßnahme erforderlich:',
+    adviceDebtToEbitda: 'Erwägen Sie Schuldenreduzierung oder EBITDA-Steigerung durch operative Verbesserungen.',
+    adviceInterestCoverage: 'Konzentrieren Sie sich auf die Steigerung des Betriebsertrags oder die Senkung der Zinsaufwendungen.',
+    adviceDebtToAssets: 'Erwägen Sie Schuldenreduzierung oder Vermögensaufstockung durch Investitionen.',
+    adviceCashFlow: 'Verbessern Sie den operativen Cashflow oder erwägen Sie eine Umschuldung.',
+    reviewPerformance: 'Überprüfen Sie die finanzielle Leistung und erwägen Sie Korrekturmaßnahmen.'
+};
+
+function calculateCovenants() {
+    const totalDebt = parseFloat(document.getElementById('totalDebt').value);
+    const ebitda = parseFloat(document.getElementById('ebitda').value);
+    const totalAssets = parseFloat(document.getElementById('totalAssets').value);
+    const cashFlow = parseFloat(document.getElementById('cashFlow').value);
+    
+    const maxDebtToEbitda = parseFloat(document.getElementById('maxDebtToEbitda').value);
+    const minInterestCoverage = parseFloat(document.getElementById('minInterestCoverage').value);
+    const maxDebtToAssets = parseFloat(document.getElementById('maxDebtToAssets').value);
+    const minCashFlowCoverage = parseFloat(document.getElementById('minCashFlowCoverage').value);
+    
+    if (!totalDebt || !ebitda || !totalAssets || !cashFlow) {
+        showMobileError(translations.pleaseFillMetrics);
+        return;
+    }
+    
+    // Calculate ratios
+    const debtToEbitda = totalDebt / ebitda;
+    const interestCoverage = ebitda / (totalDebt * 0.05); // Assuming 5% average interest rate
+    const debtToAssets = totalDebt / totalAssets;
+    const cashFlowCoverage = cashFlow / (totalDebt * 0.05); // Assuming 5% average interest rate
+    
+    // Check compliance
+    const compliance = {
+        debtToEbitda: {
+            value: debtToEbitda,
+            limit: maxDebtToEbitda,
+            compliant: debtToEbitda <= maxDebtToEbitda
+        },
+        interestCoverage: {
+            value: interestCoverage,
+            limit: minInterestCoverage,
+            compliant: interestCoverage >= minInterestCoverage
+        },
+        debtToAssets: {
+            value: debtToAssets,
+            limit: maxDebtToAssets,
+            compliant: debtToAssets <= maxDebtToAssets
+        },
+        cashFlowCoverage: {
+            value: cashFlowCoverage,
+            limit: minCashFlowCoverage,
+            compliant: cashFlowCoverage >= minCashFlowCoverage
+        }
+    };
+    
+    displayCovenantResults(compliance);
+}
+
+function displayCovenantResults(compliance) {
+    const resultsDiv = document.getElementById('results');
+    const resultsContent = document.getElementById('resultsContent');
+    
+    if (!resultsDiv || !resultsContent) return;
+    
+    // Clear previous results
+    resultsContent.innerHTML = '';
+    
+    // Overall compliance status
+    const allCompliant = Object.values(compliance).every(c => c.compliant);
+    const statusCard = document.createElement('div');
+    statusCard.className = `card mb-4 ${allCompliant ? 'border-success' : 'border-warning'}`;
+    statusCard.innerHTML = `
+        <div class="card-header ${allCompliant ? 'bg-success text-white' : 'bg-warning text-dark'}">
+            <h5 class="mb-0">
+                <i class="fas fa-${allCompliant ? 'check-circle' : 'exclamation-triangle'} me-2"></i>
+                ${allCompliant ? translations.allCompliant : translations.violationsDetected}
+            </h5>
+        </div>
+        <div class="card-body">
+            <p class="mb-0">
+                ${allCompliant ? 
+                    translations.companyCompliant : 
+                    translations.someNotMet
+                }
+            </p>
+        </div>
+    `;
+    resultsContent.appendChild(statusCard);
+    
+    // Individual covenant results
+    const covenantNames = {
+        debtToEbitda: translations.debtToEbitda,
+        interestCoverage: translations.interestCoverage,
+        debtToAssets: translations.debtToAssets,
+        cashFlowCoverage: translations.cashFlowCoverage
+    };
+    
+    Object.entries(compliance).forEach(([key, covenant]) => {
+        const covenantCard = document.createElement('div');
+        covenantCard.className = 'card mb-3';
+        covenantCard.innerHTML = `
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h6 class="card-title mb-0">${covenantNames[key]}</h6>
+                    <span class="badge ${covenant.compliant ? 'bg-success' : 'bg-danger'}">
+                        ${covenant.compliant ? translations.compliant : translations.violation}
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong>${translations.current}</strong><br>
+                        <span class="text-${covenant.compliant ? 'success' : 'danger'}">${covenant.value.toFixed(2)}</span>
+                    </div>
+                    <div class="col-6">
+                        <strong>${translations.limit}</strong><br>
+                        <span class="text-muted">${covenant.limit}</span>
+                    </div>
+                </div>
+                ${!covenant.compliant ? `
+                    <div class="alert alert-warning mt-2 mb-0">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>${translations.actionRequired}</strong> ${getCovenantAdvice(key, covenant)}
+                    </div>
+                ` : ''}
+            </div>
+        `;
+        resultsContent.appendChild(covenantCard);
+    });
+    
+    // Show results with animation
+    resultsDiv.style.display = 'block';
+    resultsDiv.classList.add('animate-fade-in-up');
+    
+    // Scroll to results
+    resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function getCovenantAdvice(key, covenant) {
+    const advice = {
+        debtToEbitda: translations.adviceDebtToEbitda,
+        interestCoverage: translations.adviceInterestCoverage,
+        debtToAssets: translations.adviceDebtToAssets,
+        cashFlowCoverage: translations.adviceCashFlow
+    };
+    return advice[key] || translations.reviewPerformance;
+}
+
+function resetForm() {
+    document.getElementById('covenantForm').reset();
+    document.getElementById('results').style.display = 'none';
+}
+
+function formatNumber(value) {
+    if (typeof value === 'number') {
+        if (value >= 1000000) {
+            return '€' + (value / 1000000).toFixed(1) + 'M';
+        } else if (value >= 1000) {
+            return '€' + (value / 1000).toFixed(1) + 'K';
+        } else {
+            return '€' + value.toFixed(2);
+        }
+    }
+    return value;
+}
+
+// Set current date on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('reportingDate').value = today;
+});
+</script>
+
+    </main>
+
+    <!-- Mobile-First Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container-fluid px-3">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <h6 class="fw-bold">SME-Schuldenmanagement-Tool</h6>
+                    <p class="small mb-2">Umfassende Schuldenmanagement-Lösungen für deutsche KMU</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="/about" class="text-light text-decoration-none small">Über</a>
+                        <a href="#" class="text-light text-decoration-none small">Datenschutzrichtlinie</a>
+                        <a href="#" class="text-light text-decoration-none small">Nutzungsbedingungen</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <p class="small mb-2">
+                        <i class="fas fa-exclamation-triangle me-1" aria-hidden="true"></i>
+                        Dieses Tool dient nur zu Bildungszwecken. Konsultieren Sie Finanzexperten für Beratung.
+                    </p>
+                    <p class="small mb-2">
+                        <i class="fas fa-globe me-1" aria-hidden="true"></i>
+                        Sprache: 
+                        <a href="/set-language/en" class="text-light text-decoration-none ">EN</a> | 
+                        <a href="/set-language/de" class="text-light text-decoration-none fw-bold">DE</a>
+                    </p>
+                    <p class="small mb-0">
+                        <i class="fas fa-code me-1" aria-hidden="true"></i>
+                        Erstellt mit Flask &amp; Bootstrap
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/static/js/main.js"></script>
+    
+    <!-- Analytics (replace with your tracking code) -->
+    
+</body>
+</html>

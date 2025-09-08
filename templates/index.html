@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Mobile-First Hero Section -->
+<div class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">{{ _('SME Debt Management Tool') }}</h1>
+        <p class="lead mb-4">{{ _('Pushing innovation through the people of Germany with appreciation for the beauty of Volkach') }}</p>
+        <p class="mb-4">{{ _('Calculate debt limits, analyze costs, prioritize repayments, and find funding opportunities') }}</p>
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+            <a href="{{ url_for('debt_brake') }}" class="btn btn-light btn-lg shadow-sm">
+                <i class="fas fa-shield-alt me-2"></i>{{ _('Get Started') }}
+            </a>
+            <a href="{{ url_for('about') }}" class="btn btn-outline-light btn-lg shadow-sm" style="color: black; border-color: white; background-color: rgba(255, 255, 255, 0.1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+                <i class="fas fa-info-circle me-2"></i>{{ _('Learn More') }}
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile-First Features Grid -->
+<div class="row g-4 mb-5">
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h5 class="card-title">{{ _('Debt Brake Calculator') }}</h5>
+                <p class="card-text flex-grow-1">{{ _('Calculate maximum sustainable debt levels') }}</p>
+                <a href="{{ url_for('debt_brake') }}" class="btn btn-primary">
+                    <i class="fas fa-calculator me-2"></i>{{ _('Calculate') }}
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h5 class="card-title">{{ _('Cost of Debt Analysis') }}</h5>
+                <p class="card-text flex-grow-1">{{ _('Analyze total cost of borrowing') }}</p>
+                <a href="{{ url_for('cost_analysis') }}" class="btn btn-primary">
+                    <i class="fas fa-chart-line me-2"></i>{{ _('Analyze') }}
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h5 class="card-title">{{ _('Debt-for-Equity Swap Simulation') }}</h5>
+                <p class="card-text flex-grow-1">{{ _('Simulate debt restructuring scenarios') }}</p>
+                <a href="{{ url_for('debt_equity') }}" class="btn btn-primary">
+                    <i class="fas fa-exchange-alt me-2"></i>{{ _('Simulate') }}
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <h5 class="card-title">{{ _('Debt Snowball Prioritization') }}</h5>
+                <p class="card-text flex-grow-1">{{ _('Optimize debt repayment strategy') }}</p>
+                <a href="{{ url_for('debt_snowball') }}" class="btn btn-primary">
+                    <i class="fas fa-snowflake me-2"></i>{{ _('Optimize') }}
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-euro-sign"></i>
+                </div>
+                <h5 class="card-title">{{ _('EU/Federal Funding Guidance') }}</h5>
+                <p class="card-text flex-grow-1">{{ _('Find available funding programs') }}</p>
+                <a href="{{ url_for('funding_guidance') }}" class="btn btn-primary">
+                    <i class="fas fa-euro-sign me-2"></i>{{ _('Find Funding') }}
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+            <div class="card-body d-flex flex-column">
+                <div class="feature-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h5 class="card-title">{{ _('Debt Covenant Tracking') }}</h5>
+                <p class="card-text flex-grow-1">{{ _('Monitor debt agreement compliance') }}</p>
+                <a href="{{ url_for('covenant_tracking') }}" class="btn btn-primary">
+                    <i class="fas fa-clipboard-check me-2"></i>{{ _('Track') }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile-First Information Section -->
+<div class="row g-4">
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>{{ _('About This Tool') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <p class="mb-3">{{ _('This comprehensive debt management tool is designed specifically for German SMEs to help them make informed financial decisions.') }}</p>
+                <p class="mb-3">{{ _('Our tools help you:') }}</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Calculate sustainable debt levels based on your income') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Analyze the true cost of borrowing') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Optimize your debt repayment strategy') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Find available funding opportunities') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Monitor debt covenant compliance') }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>{{ _('Important Notice') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-warning mb-0">
+                    <i class="fas fa-info-circle me-2"></i>
+                    {{ _('This tool is for educational purposes only. Consult financial professionals for advice.') }}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Analytics Dashboard -->
+        <div class="card mt-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">
+                    <i class="fas fa-chart-bar me-2"></i>{{ _('Analytics Dashboard') }}
+                </h4>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="smeAnalytics.exportAnalytics()">
+                        <i class="fas fa-download me-1"></i>{{ _('Export Data') }}
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="smeAnalytics.clearAnalytics()">
+                        <i class="fas fa-trash me-1"></i>{{ _('Clear Data') }}
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="analyticsDashboard">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-4">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-primary" id="totalCalculations">0</h5>
+                                    <p class="card-text">{{ _('Total Calculations') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-success" id="insightsCount">0</h5>
+                                    <p class="card-text">{{ _('Active Insights') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info" id="mostUsedTool">{{ _('None') }}</h5>
+                                    <p class="card-text">{{ _('Most Used Tool') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-3 mt-3">
+                        <div class="col-12">
+                            <div id="recentInsights"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-heart me-2"></i>{{ _('Support Development') }}
+                </h4>
+            </div>
+            <div class="card-body text-center">
+                <p class="mb-3">{{ _('Help us continue building tools for Germany') }}</p>
+                <a href="{{ url_for('donation') }}" class="btn btn-success">
+                    <i class="fas fa-heart me-2"></i>{{ _('Support') }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Analytics Dashboard Initialization -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize analytics dashboard
+        function updateAnalyticsDashboard() {
+            const summary = smeAnalytics.getAnalyticsSummary();
+            const insights = smeAnalytics.getInsights();
+            
+            // Update dashboard metrics
+            document.getElementById('totalCalculations').textContent = summary.totalCalculations;
+            document.getElementById('insightsCount').textContent = summary.insightsCount;
+            document.getElementById('mostUsedTool').textContent = summary.mostUsedTool === 'debtBrake' ? 'Debt Brake' : 
+                                                               summary.mostUsedTool === 'costAnalysis' ? 'Cost Analysis' : 
+                                                               summary.mostUsedTool === 'debtSnowball' ? 'Debt Snowball' : 'None';
+            
+            // Update recent insights
+            const recentInsightsDiv = document.getElementById('recentInsights');
+            if (insights.length > 0) {
+                recentInsightsDiv.innerHTML = `
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0"><i class="fas fa-lightbulb me-2"></i>Recent Insights</h6>
+                        </div>
+                        <div class="card-body">
+                            ${insights.slice(0, 3).map(insight => `
+                                <div class="alert alert-${insight.priority === 'high' ? 'danger' : insight.priority === 'medium' ? 'warning' : 'info'} mb-2">
+                                    <div class="d-flex align-items-start">
+                                        <i class="${insight.icon} me-2 mt-1"></i>
+                                        <div>
+                                            <h6 class="alert-heading mb-1">${insight.title}</h6>
+                                            <p class="mb-0 small">${insight.message}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else {
+                recentInsightsDiv.innerHTML = `
+                    <div class="card">
+                        <div class="card-body text-center text-muted">
+                            <i class="fas fa-chart-line fa-3x mb-3"></i>
+                            <p>No insights available yet. Start using the calculators to generate insights!</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Update dashboard on load
+        updateAnalyticsDashboard();
+        
+        // Update dashboard when analytics change
+        setInterval(updateAnalyticsDashboard, 5000);
+    });
+</script>
+{% endblock %}

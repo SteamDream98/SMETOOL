@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <i class="fas fa-exchange-alt me-2"></i>{{ _('Debt-for-Equity Swap Simulation') }}
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-4">{{ _('Simulate debt restructuring scenarios by converting debt to equity.') }}</p>
+                
+                <form id="debtEquityForm">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="debtAmount" class="form-label">{{ _('Debt Amount') }} (€)</label>
+                            <input type="number" class="form-control" id="debtAmount" name="debtAmount" 
+                                   placeholder="100000" min="0" step="1000" required>
+                            <div class="form-text">{{ _('Amount of debt to convert') }}</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="companyValue" class="form-label">{{ _('Company Valuation') }} (€)</label>
+                            <input type="number" class="form-control" id="companyValue" name="companyValue" 
+                                   placeholder="500000" min="0" step="1000" required>
+                            <div class="form-text">{{ _('Current company value') }}</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="existingShares" class="form-label">{{ _('Existing Shares') }}</label>
+                            <input type="number" class="form-control" id="existingShares" name="existingShares" 
+                                   placeholder="1000" min="1" step="1" required>
+                            <div class="form-text">{{ _('Current number of shares') }}</div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="conversionRatio" class="form-label">{{ _('Conversion Ratio') }}</label>
+                            <select class="form-select" id="conversionRatio" name="conversionRatio">
+                                <option value="1.0">{{ _('1:1 (Par Value)') }}</option>
+                                <option value="1.2" selected>{{ _('1:1.2 (Premium)') }}</option>
+                                <option value="1.5">{{ _('1:1.5 (High Premium)') }}</option>
+                                <option value="0.8">{{ _('1:0.8 (Discount)') }}</option>
+                            </select>
+                            <div class="form-text">{{ _('Debt to equity conversion ratio') }}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
+                            <i class="fas fa-undo me-2"></i>{{ _('Reset') }}
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="calculateDebtEquity()">
+                            <i class="fas fa-exchange-alt me-2"></i>{{ _('Simulate') }}
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Results Section -->
+                <div id="results" class="mt-4" style="display: none;">
+                    <hr>
+                    <h4 class="mb-3">
+                        <i class="fas fa-chart-line me-2"></i>{{ _('Simulation Results') }}
+                    </h4>
+                    <div id="resultsContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>{{ _('How It Works') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <p class="mb-3">{{ _('A debt-for-equity swap converts outstanding debt into company shares.') }}</p>
+                
+                <h6>{{ _('Process:') }}</h6>
+                <ol class="small">
+                    <li class="mb-2">{{ _('Determine company valuation') }}</li>
+                    <li class="mb-2">{{ _('Calculate share price') }}</li>
+                    <li class="mb-2">{{ _('Apply conversion ratio') }}</li>
+                    <li class="mb-2">{{ _('Issue new shares to creditors') }}</li>
+                </ol>
+                
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    <strong>{{ _('Tip:') }}</strong> {{ _('This can improve cash flow by reducing debt service obligations.') }}
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>{{ _('Considerations') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled small">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Reduces debt burden') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ _('Improves cash flow') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                        {{ _('Dilutes ownership') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                        {{ _('May affect control') }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden translated strings for JavaScript -->
+<div id="translations" style="display: none;"
+     data-current-share-price="{{ _('Current Share Price') }}"
+     data-new-shares-issued="{{ _('New Shares Issued') }}"
+     data-total-shares-after="{{ _('Total Shares After') }}"
+     data-new-share-price="{{ _('New Share Price') }}"
+     data-ownership-dilution="{{ _('Ownership Dilution') }}"
+     data-debt-reduction="{{ _('Debt Reduction') }}"
+     data-impact="{{ _('Impact:') }}"
+     data-this-swap-reduces-debt-by="{{ _('This swap reduces debt by') }}"
+     data-but-dilutes-ownership-by="{{ _('but dilutes ownership by') }}"
+     data-please-fill-in-all-required-fields="{{ _('Please fill in all required fields.') }}">
+</div>
+
+<script>
+function calculateDebtEquity() {
+    const debtAmount = parseFloat(document.getElementById('debtAmount').value);
+    const companyValue = parseFloat(document.getElementById('companyValue').value);
+    const existingShares = parseFloat(document.getElementById('existingShares').value);
+    const conversionRatio = parseFloat(document.getElementById('conversionRatio').value);
+    
+    if (!debtAmount || !companyValue || !existingShares) {
+        showMobileError(document.getElementById('translations').dataset.pleaseFillInAllRequiredFields);
+        return;
+    }
+    
+    const sharePrice = companyValue / existingShares;
+    const newShares = (debtAmount / sharePrice) * conversionRatio;
+    const totalShares = existingShares + newShares;
+    const newSharePrice = companyValue / totalShares;
+    const ownershipDilution = (newShares / totalShares) * 100;
+    const debtReduction = debtAmount;
+    
+    const results = {
+        sharePrice: sharePrice,
+        newShares: newShares,
+        totalShares: totalShares,
+        newSharePrice: newSharePrice,
+        ownershipDilution: ownershipDilution,
+        debtReduction: debtReduction
+    };
+    
+    displayDebtEquityResults(results);
+}
+
+function displayDebtEquityResults(results) {
+    const resultsDiv = document.getElementById('results');
+    const resultsContent = document.getElementById('resultsContent');
+    const translations = document.getElementById('translations').dataset;
+    
+    if (!resultsDiv || !resultsContent) return;
+    
+    // Clear previous results
+    resultsContent.innerHTML = '';
+    
+    // Create results cards
+    const cards = [
+        {
+            title: translations.currentSharePrice,
+            value: results.sharePrice,
+            icon: 'fas fa-euro-sign',
+            color: 'primary'
+        },
+        {
+            title: translations.newSharesIssued,
+            value: results.newShares,
+            icon: 'fas fa-plus-circle',
+            color: 'info'
+        },
+        {
+            title: translations.totalSharesAfter,
+            value: results.totalShares,
+            icon: 'fas fa-chart-line',
+            color: 'success'
+        },
+        {
+            title: translations.newSharePrice,
+            value: results.newSharePrice,
+            icon: 'fas fa-euro-sign',
+            color: 'warning'
+        },
+        {
+            title: translations.ownershipDilution,
+            value: results.ownershipDilution.toFixed(1) + '%',
+            icon: 'fas fa-percentage',
+            color: 'danger'
+        },
+        {
+            title: translations.debtReduction,
+            value: results.debtReduction,
+            icon: 'fas fa-minus-circle',
+            color: 'success'
+        }
+    ];
+    
+    cards.forEach(card => {
+        const cardElement = document.createElement('div');
+        cardElement.className = 'card mb-3';
+        cardElement.innerHTML = `
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="${card.icon} text-${card.color} fs-4"></i>
+                    </div>
+                    <div>
+                        <h6 class="card-title mb-1">${card.title}</h6>
+                        <p class="card-text h5 text-${card.color} mb-0">${formatNumber(card.value)}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        resultsContent.appendChild(cardElement);
+    });
+    
+    // Add impact assessment
+    const impactDiv = document.createElement('div');
+    impactDiv.className = 'alert alert-info mt-3';
+    impactDiv.innerHTML = `
+        <i class="fas fa-info-circle me-2"></i>
+        <strong>${translations.impact}</strong>
+        ${translations.thisSwapReducesDebtBy} ${formatNumber(results.debtReduction)} ${translations.butDilutesOwnershipBy} ${results.ownershipDilution.toFixed(1)}%.
+    `;
+    resultsContent.appendChild(impactDiv);
+    
+    // Show results with animation
+    resultsDiv.style.display = 'block';
+    resultsDiv.classList.add('animate-fade-in-up');
+    
+    // Scroll to results
+    resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetForm() {
+    document.getElementById('debtEquityForm').reset();
+    document.getElementById('results').style.display = 'none';
+}
+
+function formatNumber(value) {
+    if (typeof value === 'number') {
+        if (value >= 1000000) {
+            return '€' + (value / 1000000).toFixed(1) + 'M';
+        } else if (value >= 1000) {
+            return '€' + (value / 1000).toFixed(1) + 'K';
+        } else {
+            return '€' + value.toFixed(2);
+        }
+    }
+    return value;
+}
+</script>
+{% endblock %}

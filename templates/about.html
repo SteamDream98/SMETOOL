@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <i class="fas fa-info-circle me-2"></i>{{ _('About SME Debt Management Tool') }}
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">{{ _('A startup initiative pushing innovation through the people of Germany with appreciation for the beauty of Volkach, Bavaria. We create digital solutions that empower German SMEs to thrive in the modern economy.') }}</p>
+                
+                <h4 class="mt-4 mb-3">{{ _('Our Startup Journey') }}</h4>
+                <p>{{ _('Founded with deep appreciation for German culture and innovation, our startup is inspired by the picturesque beauty of Volkach. We believe in driving technological progress through the people of Germany, by the people, for the people. Our mission is to create sustainable digital solutions that strengthen German SMEs and contribute to the nation\'s innovative spirit.') }}</p>
+                
+                <h4 class="mt-4 mb-3">{{ _('What We Offer') }}</h4>
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-shield-alt text-primary fs-4"></i>
+                            </div>
+                            <div>
+                                <h6>{{ _('Debt Brake Calculator') }}</h6>
+                                <p class="small text-muted">{{ _('Calculate maximum sustainable debt levels based on your income and expenses.') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-calculator text-success fs-4"></i>
+                            </div>
+                            <div>
+                                <h6>{{ _('Cost Analysis') }}</h6>
+                                <p class="small text-muted">{{ _('Analyze the total cost of borrowing including interest, fees, and opportunity costs.') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-exchange-alt text-warning fs-4"></i>
+                            </div>
+                            <div>
+                                <h6>{{ _('Debt-Equity Swap') }}</h6>
+                                <p class="small text-muted">{{ _('Simulate debt restructuring scenarios by converting debt to equity.') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-snowflake text-info fs-4"></i>
+                            </div>
+                            <div>
+                                <h6>{{ _('Debt Snowball') }}</h6>
+                                <p class="small text-muted">{{ _('Optimize your debt repayment strategy using proven methods.') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-euro-sign text-danger fs-4"></i>
+                            </div>
+                            <div>
+                                <h6>{{ _('Funding Guidance') }}</h6>
+                                <p class="small text-muted">{{ _('Find available funding programs and grants for German SMEs.') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-clipboard-check text-secondary fs-4"></i>
+                            </div>
+                            <div>
+                                <h6>{{ _('Covenant Tracking') }}</h6>
+                                <p class="small text-muted">{{ _('Monitor compliance with debt agreement covenants and requirements.') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="mt-4 mb-3">{{ _('Why We Built This') }}</h4>
+                <p>{{ _('German SMEs face unique challenges in managing debt and accessing funding. We recognized the need for specialized tools that understand the German business environment, regulatory framework, and funding landscape.') }}</p>
+                
+                <p>{{ _('Our tools are designed to be:') }}</p>
+                <ul>
+                    <li><strong>{{ _('Accessible') }}:</strong> {{ _('Free to use with no registration required') }}</li>
+                    <li><strong>{{ _('Accurate') }}:</strong> {{ _('Based on established financial principles and German regulations') }}</li>
+                    <li><strong>{{ _('Practical') }}:</strong> {{ _('Designed for real-world business scenarios') }}</li>
+                    <li><strong>{{ _('Multilingual') }}:</strong> {{ _('Available in English and German') }}</li>
+                    <li><strong>{{ _('Mobile-Friendly') }}:</strong> {{ _('Optimized for use on all devices') }}</li>
+                </ul>
+                
+                <h4 class="mt-4 mb-3">{{ _('Our Commitment') }}</h4>
+                <p>{{ _('We are committed to providing accurate, up-to-date tools that help German SMEs make better financial decisions. However, we want to emphasize that:') }}</p>
+                
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>{{ _('Important Disclaimer:') }}</strong> {{ _('This tool is for educational purposes only. It should not be considered as professional financial advice. Always consult with qualified financial professionals before making important financial decisions.') }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-heart me-2"></i>{{ _('Support Our Mission') }}
+                </h4>
+            </div>
+            <div class="card-body text-center">
+                <p class="mb-3">{{ _('Help us continue building tools for Germany') }}</p>
+                <p class="small text-muted mb-3">{{ _('Your friendly American citizen building bipartisan tools for Germany') }}</p>
+                <a href="{{ url_for('donation') }}" class="btn btn-success btn-lg">
+                    <i class="fas fa-heart me-2"></i>{{ _('Support Development') }}
+                </a>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-code me-2"></i>{{ _('Technical Details') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <p class="mb-3">{{ _('This application is built using modern web technologies:') }}</p>
+                <ul class="list-unstyled small">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        <strong>{{ _('Backend:') }}</strong> {{ _('Python Flask') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        <strong>{{ _('Frontend:') }}</strong> {{ _('Bootstrap 5, HTML5, CSS3') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        <strong>{{ _('JavaScript:') }}</strong> {{ _('Vanilla JS with mobile optimization') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        <strong>{{ _('Design:') }}</strong> {{ _('Mobile-first responsive design') }}
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        <strong>{{ _('Languages:') }}</strong> {{ _('English and German support') }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-envelope me-2"></i>{{ _('Contact & Feedback') }}
+                </h4>
+            </div>
+            <div class="card-body">
+                <p class="mb-3">{{ _('We welcome your feedback and suggestions for improvement.') }}</p>
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('donation') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-heart me-2"></i>{{ _('Support Us') }}
+                    </a>
+                    <button class="btn btn-outline-secondary" onclick="showFeedbackForm()">
+                        <i class="fas fa-comment me-2"></i>{{ _('Send Feedback') }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Modal -->
+<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="feedbackModalLabel">{{ _('Send Feedback') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="feedbackForm">
+                    <div class="mb-3">
+                        <label for="feedbackName" class="form-label">{{ _('Your Name') }}</label>
+                        <input type="text" class="form-control" id="feedbackName" name="feedbackName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="feedbackEmail" class="form-label">{{ _('Email Address') }}</label>
+                        <input type="email" class="form-control" id="feedbackEmail" name="feedbackEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="feedbackMessage" class="form-label">{{ _('Message') }}</label>
+                        <textarea class="form-control" id="feedbackMessage" name="feedbackMessage" rows="4" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ _('Cancel') }}</button>
+                <button type="button" class="btn btn-primary" onclick="submitFeedback()">{{ _('Send Feedback') }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showFeedbackForm() {
+    const modal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+    modal.show();
+}
+
+function submitFeedback() {
+    const name = document.getElementById('feedbackName').value.trim();
+    const email = document.getElementById('feedbackEmail').value.trim();
+    const message = document.getElementById('feedbackMessage').value.trim();
+    
+    // Basic client-side validation
+    if (!name || !email || !message) {
+        showMobileError('{{ _("Please fill in all fields.") }}');
+        return;
+    }
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showMobileError('{{ _("Please enter a valid email address.") }}');
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = document.querySelector('#feedbackModal .btn-primary');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>{{ _("Sending...") }}';
+    submitBtn.disabled = true;
+    
+    // Prepare form data
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('message', message);
+    
+    // Send feedback via AJAX
+    fetch('/submit-feedback', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showMobileSuccess(data.message);
+            
+            // Close modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('feedbackModal'));
+            modal.hide();
+            
+            // Reset form
+            document.getElementById('feedbackForm').reset();
+        } else {
+            showMobileError(data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showMobileError('{{ _("An error occurred while sending your feedback. Please try again later.") }}');
+    })
+    .finally(() => {
+        // Reset button state
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    });
+}
+</script>
+{% endblock %}
